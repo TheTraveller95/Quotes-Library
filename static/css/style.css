@@ -1,0 +1,26 @@
+.main-title{
+    text-align: center;
+    font-weight: 900;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.secondary-title{
+    margin-left: 60%;
+}
+
+.description{
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: justify;
+}
+
+.button{
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+}
+
+.categories{
+    float: left;
+}
