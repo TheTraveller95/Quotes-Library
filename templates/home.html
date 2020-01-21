@@ -1,40 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="{{url_for('static', filename= 'css/style.css')}}">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Logo</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">Javascript</a></li>
-                    <li><a href="mobile.html">Mobile</a></li>
-                </ul>
-            </div>
-        </nav>
+{% extends 'base.html' %}
 
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">Javascript</a></li>
-            <li><a href="mobile.html">Mobile</a></li>
-        </ul>
-    </header>
+{% block content %}
 
-    <main>
+
+<main>
         <p class="main-title">Quotes Library</p>
         <p class="secondary-title">by Andrea</p>
         <section>
@@ -46,24 +15,21 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo deserunt delectus tenetur illo ducimus, maxime vero, eius voluptatum natus 
                 dignissimos iste consequatur reprehenderit nobis commodi nihil sed. Voluptatem, ut necessitatibus!
             </p>
-            <div class="button">
-            <a class="waves-effect waves-light btn add-quote"><i class="material-icons right">cloud</i>button</a>
-            </div>
         </section>
     </main>
 
-    <div class="row">
-    {% for category in categories %}
-        <span class="col">{{category.category_name}}</span>
-    {% endfor %}
+    <div class="cat">
+        <p class="cat-title">Categories</p>
+        {% for category in categories %}
+            <span><a class="waves-effect waves-light btn-large" href="{{url_for('get_category', category_id=category._id)}}">{{category.category_name}}</a></span>
+        {% endfor %}
     </div>
 
-    {% block content %}
+    <div class="author">
+        <p class="author-title">Authors</p>
+        {% for quote in quotes %}
+            <span><a class="waves-effect waves-light btn-large">{{quote.quote_author}}</a></span>
+        {% endfor %}
+    </div>
+
     {% endblock %}
-    <script>
-        $(document).ready(function(){
-            $('.sidenav').sidenav();
-        });
-    </script>
-</body>
-</html>

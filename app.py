@@ -11,8 +11,14 @@ app.config['MONGO_URI'] = 'mongodb+srv://root:r00tUser@myfirstcluster-p7dea.mong
 mongo = PyMongo(app)
 
 @app.route('/')
-def hello():
-    return render_template('home.html', categories=mongo.db.categories.find())
+def home():
+    return render_template('home.html', 
+    categories=mongo.db.categories.find(),
+    quotes=mongo.db.quotes.find())
+
+@app.route('/get_category/<category_id>')
+def get_category(category_id):
+    return render_template('getcategory.html', category=mongo.db.categories.find_one({'_id': ObjectId(category_id)}))
 
 
 if __name__ == '__main__':
