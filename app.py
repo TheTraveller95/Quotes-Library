@@ -25,7 +25,7 @@ def get_category(category_id):
 @app.route('/get_author/<author>')
 def get_author(author):
     return render_template('getauthor.html',
-        quote=mongo.db.quotes.find())
+        quote=mongo.db.quotes.find({'quote_author': author}))
 
 
 if __name__ == '__main__':
