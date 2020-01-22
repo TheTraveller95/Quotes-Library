@@ -3,5 +3,24 @@
 {% block content %}
 
     <h2 class="choosen-category">{{category.category_name}}</h2>
+    <main>
+    {% for quote in quotes %}
+    {% if quote.quote_category == category.category_name %}
+        <div class="row">
+        <ul>
+            <li class="col">
+                <div>
+                    {{quote.quote_text}}
+                </div>
+                <div>
+                    <span>{{quote.quote_author}} - </span>
+                    <span>{{quote.quote_source_name}}</span>
+                </div>
+            </li>
+        </ul>
+        </div>
+    {% endif %}
+    {% endfor %}
+    </main>
 
 {% endblock %}

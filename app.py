@@ -18,7 +18,14 @@ def home():
 
 @app.route('/get_category/<category_id>')
 def get_category(category_id):
-    return render_template('getcategory.html', category=mongo.db.categories.find_one({'_id': ObjectId(category_id)}))
+    return render_template('getcategory.html', 
+        category = mongo.db.categories.find_one({'_id': ObjectId(category_id)}),
+        quotes=mongo.db.quotes.find())
+
+@app.route('/get_author/<author>')
+def get_author(author):
+    return render_template('getauthor.html',
+        quote=mongo.db.quotes.find())
 
 
 if __name__ == '__main__':

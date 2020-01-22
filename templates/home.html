@@ -28,7 +28,7 @@
     <div class="author">
         <p class="author-title">Authors</p>
         {% for quote in quotes %}
-            <span><a class="waves-effect waves-light btn-large">{{quote.quote_author}}</a></span>
+            <span><a class="waves-effect waves-light btn-large" href="{{url_for('get_author', author=quote.quote_author)}}">{{quote.quote_author}}</a></span>
         {% endfor %}
     </div>
 

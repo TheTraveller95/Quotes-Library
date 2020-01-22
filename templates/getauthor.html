@@ -1,0 +1,13 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+    {% for quote in quotes %}
+        {% if author == quote.quote_author %}
+
+            <h2 class="choosen-category">{{quote.quote_author}}</h2>
+
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}
