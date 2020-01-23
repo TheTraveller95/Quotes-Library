@@ -14,7 +14,7 @@ mongo = PyMongo(app)
 def home():
     return render_template('home.html', 
     categories=mongo.db.categories.find(),
-    quotes=mongo.db.quotes.find())
+    quotes=list(mongo.db.quotes.find()))
 
 @app.route('/get_category/<category_id>')
 def get_category(category_id):
@@ -26,6 +26,11 @@ def get_category(category_id):
 def get_author(author):
     return render_template('getauthor.html',
         quote=mongo.db.quotes.find({'quote_author': author}))
+
+@app.route('/get_source/<source>')
+def get_source(source):
+    return render_template('getsource.html',
+    quote=mongo.db.quotes.find({'quote_source': source}))
 
 
 if __name__ == '__main__':

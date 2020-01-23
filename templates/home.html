@@ -4,19 +4,19 @@
 
 
 <main>
-        <p class="main-title">Quotes Library</p>
-        <p class="secondary-title">by Andrea</p>
-        <section>
-            <p class="description">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio error ipsa iusto, asperiores
-                repudiandae soluta a id nihil repellendus similique ab excepturi sunt rerum vel corrupti, exercitationem 
-                ratione veritatis magni? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et beatae aliquid aspernatur adipisci 
-                aperiam officiis quidem consectetur, nobis deserunt eius. Culpa ducimus placeat facilis natus quis! Assumenda dignissimos amet dicta.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo deserunt delectus tenetur illo ducimus, maxime vero, eius voluptatum natus 
-                dignissimos iste consequatur reprehenderit nobis commodi nihil sed. Voluptatem, ut necessitatibus!
-            </p>
-        </section>
-    </main>
+    <p class="main-title">Quotes Library</p>
+    <p class="secondary-title">by Andrea</p>
+    <section>
+        <p class="description">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio error ipsa iusto, asperiores
+            repudiandae soluta a id nihil repellendus similique ab excepturi sunt rerum vel corrupti, exercitationem 
+            ratione veritatis magni? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et beatae aliquid aspernatur adipisci 
+            aperiam officiis quidem consectetur, nobis deserunt eius. Culpa ducimus placeat facilis natus quis! Assumenda dignissimos amet dicta.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo deserunt delectus tenetur illo ducimus, maxime vero, eius voluptatum natus 
+            dignissimos iste consequatur reprehenderit nobis commodi nihil sed. Voluptatem, ut necessitatibus!
+        </p>
+    </section>
+    
 
     <div class="cat">
         <p class="cat-title">Categories</p>
@@ -32,4 +32,15 @@
         {% endfor %}
     </div>
 
+    <div class="source">
+        <p class="source-title">Type of source</p>
+        {% for quote in quotes %}
+            <span><a class="waves-effect waves-light btn-large" href="{{url_for('get_source', source=quote.quote_source)}}">{{quote.quote_source}}</a></span>
+        {% endfor %}
+    </div>
+
+</main>
+
+
     {% endblock %}
+

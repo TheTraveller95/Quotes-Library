@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+    {% for quote in quote %}
+
+        <h2 class="choosen-category">{{quote.quote_source}}</h2>
+        <div>
+            <ul>
+                <li>{{quote.quote_text}}</li>
+                <li>{{quote.quote_source_name}}</li>
+            </ul>
+        </div>
+
+    {% endfor %}
+
+{% endblock %}
