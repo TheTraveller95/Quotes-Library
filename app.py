@@ -12,9 +12,23 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def home():
+    
     return render_template('home.html', 
     categories=mongo.db.categories.find(),
-    quotes=list(mongo.db.quotes.find()))
+    quotes=list(mongo.db.quotes.find()),
+    hola=hola())
+
+def hola():
+    quotes=mongo.db.quotes.find()
+    output = []
+    for quote in quotes:
+        quote.quote_source
+        output.push(quote.quote_source)
+        mylist = list(dict.fromkeys(output))
+    return(mylist)
+
+def get_value():
+    source = mongo.db.categories.find()
 
 @app.route('/get_category/<category_id>')
 def get_category(category_id):
