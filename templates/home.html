@@ -34,7 +34,7 @@
 
     <div class="source">
         <p class="source-title">Type of source</p>
-        {% for quote in mylist %}
+        {% for quote in quotes %}
             <span><a class="waves-effect waves-light btn-large" href="{{url_for('get_source', source=quote.quote_source)}}">{{quote.quote_source}}</a></span>
         {% endfor %}
     </div>

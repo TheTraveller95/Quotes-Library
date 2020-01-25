@@ -1,0 +1,52 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<form action = '{{url_for("modify_quote")}}' method="POST">
+    <div class="row">
+        <div class="input-field col s12">
+            <select id="category_name" name="category_name">
+            <option value="" disabled selected>Choose the category</option>
+            {% for category in category %}
+            <option value="{{category.category_name}}">{{category.category_name}}</option>
+            {% endfor %}
+            </select>
+            <label>Quote Category</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="quote_text" name="quote_text" type="text" class="validate">
+            <label for="icon_prefix">{{quote.quote_text}}</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="quote_author" name="quote_author" type="text" class="validate">
+            <label for="icon_prefix">{{quote.quote_author}}</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="quote_source" name="quote_source" type="text" class="validate">
+            <label for="icon_prefix">{{quote.quote_source}}</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="quote_source_name" name="quote_source_name" type="text" class="validate">
+            <label for="icon_prefix">{{quote.quote_source_name}}</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="quote_language" name="quote_language" type="text" class="validate">
+            <label for="icon_prefix">{{quote.quote_language}}</label>
+        </div>
+    </div>
+    <button class="btn waves-effect waves-light" type="submit">Submit
+        <i class="material-icons right">send</i>
+    </button>
+</form>
+
+{% endblock %}

@@ -2,13 +2,15 @@
 
 {% block content %}
 
+<h2 class="choosen-category">{{quote_author}}</h2>
+
     {% for quote in quote %}
 
-        <h2 class="choosen-category">{{quote.quote_author}}</h2>
         <div>
             <ul>
                 <li>{{quote.quote_text}}</li>
                 <li>{{quote.quote_source_name}}</li>
+                <li><a href="{{url_for('modify', quote_id=quote._id)}}" class="waves-effect waves-light btn-small"><i class="material-icons right">cloud</i>Modify a quote</a></li>
             </ul>
         </div>
 
