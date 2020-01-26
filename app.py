@@ -25,6 +25,16 @@ def home():
     # get_source=mylist_to_dict
     )
 
+@app.route('/add_category')
+def add_category():
+    return render_template('addcategory.html',
+    category=mongo.db.categories.find())
+
+@app.route('/create_category', methods=['POST'])
+def create_category():
+    category=mongo.db.categories
+    category.insert_one(request.form.to_dict())
+    return redirect('home')
 
 @app.route('/get_category/<category_id>')
 def get_category(category_id):
@@ -60,13 +70,14 @@ def add_quote():
 @app.route('/modify/<quote_id>')
 def modify(quote_id):
     return render_template('modifyquote.html',
-    quote=mongo.db.quotes.find_one({'id':ObjectId(quote_id)}),
+    quote=mongo.db.quotes.find_one({'_id': ObjectId(quote_id)}),
     category=mongo.db.categories.find())
 
-@app.route('/modify_quote/<quote_id>')
+@app.route('/modify_quote/<quote_id>', methods=['POST'])
 def modify_quote(quote_id):
     quote = mongo.db.quotes
     quote.update({'_id': ObjectId(quote_id)}, {
+        'quote_category': request.form.get('quote_category'),
         'quote_text': request.form.get('quote_text'),
         'quote_author': request.form.get('quote_author'),
         'quote_source': request.form.get('quote_source'),

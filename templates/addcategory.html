@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<form action = '{{url_for("create_category")}}' method="POST">
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="category_name" name="category_name" type="text" class="validate">
+            <label for="icon_prefix">Category name</label>
+        </div>
+        </div>
+    <button class="btn waves-effect waves-light" type="submit">Submit
+        <i class="material-icons right">send</i>
+    </button>
+</form>
+
+{% endblock %}

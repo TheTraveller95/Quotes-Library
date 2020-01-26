@@ -20,6 +20,7 @@
 
     <div class="cat">
         <p class="cat-title">Categories</p>
+        <span><a href="{{url_for('add_category')}}" class="waves-effect waves-light btn add-quote"><i class="material-icons right">cloud</i>Add category</a></span>
         {% for category in categories %}
             <span><a class="waves-effect waves-light btn-large" href="{{url_for('get_category', category_id=category._id)}}">{{category.category_name}}</a></span>
         {% endfor %}
