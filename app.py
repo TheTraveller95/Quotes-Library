@@ -11,6 +11,7 @@ app.config['MONGO_URI'] = 'mongodb+srv://root:r00tUser@myfirstcluster-p7dea.mong
 
 mongo = PyMongo(app)
 
+
 @app.route('/')
 def home():
     quotes=mongo.db.quotes.find()
@@ -85,6 +86,12 @@ def modify_quote(quote_id):
         'quote_language': request.form.get('quote_language')
     })
     return redirect(url_for('home'))
+
+@app.route('/delete_quote/<quote_id>')
+def delete_quote(quote_id):
+    quote=mongo.db.quotes
+    quote.delete_one({'_id': ObjectId(quote_id)})
+    return redirect('home')
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=os.getenv('PORT'), debug=True)

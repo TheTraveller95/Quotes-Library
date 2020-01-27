@@ -11,7 +11,16 @@
                 <li>{{quote.quote_text}}</li>
                 <li>{{quote.quote_source_name}}</li>
                 <li>
-                    <a href="{{url_for('modify', quote_id = quote._id)}}" class="waves-effect waves-light btn-small"><i class="material-icons right">cloud</i>Modify quote</a>
+                    <span>
+                        <a href="{{url_for('modify', quote_id = quote._id)}}" class="waves-effect waves-light btn-small">
+                        <i class="material-icons right">cloud</i>Modify quote
+                        </a>
+                    </span>
+                    <span>
+                        <a href="{{url_for('delete_quote', quote_id = quote._id)}}" class="waves-effect waves-light btn-small">
+                        <i class="material-icons right">cloud</i>Delete quote
+                        </a>
+                    </span>
                 </li>
             </ul>
         </div>

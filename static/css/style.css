@@ -2,6 +2,28 @@ html{
     height: 100%;
 }
 
+/*-------------------------------------buttons---------------------------------------*/
+
+.add-nav{
+    padding-left: 10px;
+}
+
+
+.add-quote{
+    margin-bottom: 10px;
+    margin-left: 5px;
+    padding: 0 10;
+    text-align: center;
+}
+
+.right{
+    margin-left: 0 !important;
+}
+
+.btn-large{
+    margin-top: 10px;
+}
+
 .main-title{
     text-align: center;
     font-weight: 900;
@@ -29,7 +51,7 @@ html{
     float: left;
 }
 
-.cat, .author, .source{
+.cat, .author, .source, .cat-loop{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -46,6 +68,7 @@ html{
 }
 
 footer{
+    margin-top: 25px;
     height: 50px;
     width: 100%;
     background-color: black;
