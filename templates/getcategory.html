@@ -1,11 +1,11 @@
 {% extends 'home.html' %}
 
 {% block content %}
-
-    <h2 class="choosen-category">{{category.category_name}}</h2>
+<div class="container-cat">
+    <h2 class="choosen-category">{{categories.category_name}}</h2>
     <main>
     {% for quote in quotes %}
-    {% if quote.quote_category == category.category_name %}
+    {% if quote.quote_category == categories.category_name %}
         <div class="row">
         <ul>
             <li>
@@ -34,5 +34,6 @@
     {% endif %}
     {% endfor %}
     </main>
+</div>
 
 {% endblock %}

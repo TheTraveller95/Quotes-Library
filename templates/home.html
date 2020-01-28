@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
 <main>
     <p class="main-title">Quotes Library</p>
     <p class="secondary-title">by Andrea</p>
@@ -23,7 +22,7 @@
         <a href="{{url_for('add_category')}}" class="waves-effect waves-light btn add-quote"><i class="material-icons right add-image">add_to_photos</i></a>
     </div>
     <div class="cat-loop">
-        {% for category in categories %}
+        {% for category in category %}
         <a class="waves-effect waves-light btn-large" href="{{url_for('get_category', category_id=category._id)}}">{{category.category_name}}</a>
         {% endfor %}
     </div>

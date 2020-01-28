@@ -1,11 +1,54 @@
-html{
-    height: 100%;
+
+body {
+    background-image: url(https://live.staticflickr.com/65535/49456465241_4a411c38f3_b.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 /*-------------------------------------buttons---------------------------------------*/
 
 .add-nav{
     padding-left: 10px;
+}
+
+/*.dropdownn{
+    width: 113.95px;
+    left: 986.925px;
+    top: 40px;
+    height: 285px;
+    transform-origin: 0 0;
+    opacity: 0.4;
+    transform: scaleX(1) scaleY(1);
+    margin-top: 25px;
+    background-color: transparent;
+}*/
+
+#dropdown1,
+#dropdown2,
+#dropdown3 {
+    top: 64px !important;
+    opacity: 0.4 !important;
+}
+
+#dropdown1 li,
+#dropdown2 li,
+#dropdown3 li {
+    background-color: grey !important;
+    color: black !important;
+}
+
+#dropdown1 a,
+#dropdown2 a,
+#dropdown3 a {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    background-color: transparent !important;
+    color: white !important;
+}
+
+#dropdown2 a {
+    font-size: 0.65rem;
 }
 
 

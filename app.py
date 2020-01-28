@@ -21,7 +21,7 @@ def home():
       #  source_list = mylist.append(source) 
     #mylist_to_dict = dict(mylist) 
     return render_template('home.html', 
-    categories=mongo.db.categories.find(),
+    category=list(mongo.db.categories.find()),
     quotes=list(mongo.db.quotes.find())
     # get_source=mylist_to_dict
     )
@@ -40,20 +40,25 @@ def create_category():
 @app.route('/get_category/<category_id>')
 def get_category(category_id):
     return render_template('getcategory.html', 
-        category=mongo.db.categories.find_one({'_id': ObjectId(category_id)}),
-        quotes=mongo.db.quotes.find())
+        category= list(mongo.db.categories.find()),
+        categories=mongo.db.categories.find_one({'_id': ObjectId(category_id)}),
+        quotes=list(mongo.db.quotes.find()))
 
 @app.route('/get_author/<author>')
 def get_author(author):
     return render_template('getauthor.html',
         quote=list(mongo.db.quotes.find({'quote_author': author})),
-        quote_author=author)
+        quote_author=author,
+        category=list(mongo.db.categories.find()),
+        quotes=list(mongo.db.quotes.find()))
 
 @app.route('/get_source/<source>')
 def get_source(source):
     return render_template('getsource.html',
         quote=list(mongo.db.quotes.find({'quote_source': source})),
-        quote_source=source)
+        quote_source=source,
+        category= list(mongo.db.categories.find()),
+        quotes=list(mongo.db.quotes.find()))
 
 
 @app.route('/create_quote')
@@ -72,7 +77,7 @@ def add_quote():
 def modify(quote_id):
     return render_template('modifyquote.html',
     quote=mongo.db.quotes.find_one({'_id': ObjectId(quote_id)}),
-    category=mongo.db.categories.find())
+    category=list(mongo.db.categories.find()))
 
 @app.route('/modify_quote/<quote_id>', methods=['POST'])
 def modify_quote(quote_id):
