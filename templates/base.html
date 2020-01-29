@@ -8,6 +8,7 @@
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="static/js/main.js"></script>
     <link rel="stylesheet" href="{{url_for('static', filename= 'css/style.css')}}">
     <title>Document</title>
 </head>
@@ -58,10 +59,20 @@
         </nav>
 
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li></li>
-            <li><a href="{{url_for('create_quote')}}" class="waves-effect waves-light btn-small add-quote"><i class="material-icons right">cloud</i>Add Quote</a></li>
+            <li>
+                <a id="cat-button-mobile" href="#cat-section">Categories</a>
+            </li>
+            <li>
+                <a id="author-button-mobile" href="#author-section">Authors</a>
+            </li>
+            <li>
+                <a id="source-button-mobile" href="#source-section">Source</a>
+            </li>
+            <li>
+                <a href="{{url_for('create_quote')}}" class="waves-effect waves-light btn-small add-quote">
+                    <i class="material-icons right">add_to_photos</i>Add Quote
+                </a>
+            </li>
         </ul>
     </header>
     <div class="container">
