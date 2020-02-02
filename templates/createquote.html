@@ -7,7 +7,7 @@
         <div class="input-field col s12">
             <select id="category_name" name="category_name">
             <option value="" disabled selected>Choose the category</option>
-            {% for category in categories %}
+            {% for category in category %}
             <option value="{{category.category_name}}">{{category.category_name}}</option>
             {% endfor %}
             </select>
@@ -40,8 +40,13 @@
     </div>
     <div class="row">
         <div class="input-field col s12">
-            <input id="quote_language" name="quote_language" type="text" class="validate">
-            <label for="icon_prefix">Quote Language</label>
+            <select id="language" name="language">
+            <option value="" disabled selected>Choose the language</option>
+            {% for idiom in languages %}
+            <option value="{{idiom.language}}">{{idiom.language}}</option>
+            {% endfor %}
+            </select>
+            <label>Quote Language</label>
         </div>
     </div>
     <button class="btn waves-effect waves-light" type="submit">Submit

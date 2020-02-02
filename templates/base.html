@@ -30,8 +30,8 @@
         </ul>
         <ul id="dropdown3" class="dropdown-content">
             <li>
-                {% for quote in quotes %}
-                    <a class="waves-effect waves-light btn-large" href="{{url_for('get_source', source=quote.quote_source)}}">{{quote.quote_source}}</a>
+                {% for source in sources %}
+                    <a class="waves-effect waves-light btn-large" href="{{url_for('get_source', source_id=source._id)}}">{{source.source_name}}</a>
                 {% endfor %}
             </li>
         </ul>

@@ -2,9 +2,10 @@
 
 {% block content %}
 
-    <h2 class="choosen-category">{{quote_source}}</h2>
+    <h2 class="choosen-category">{{source.source_name}}</h2>
 
     {% for quote in quote %}
+    {% if source.source_name == quote.quote_source %}
         
         <div>
             <ul>
@@ -24,6 +25,8 @@
                 </li>
             </ul>
         </div>
+
+    {%  endif %}
 
     {% endfor %}
 
