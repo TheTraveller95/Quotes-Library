@@ -28,8 +28,13 @@
     </div>
     <div class="row">
         <div class="input-field col s12">
-            <input id="quote_source" name="quote_source" type="text" class="validate">
-            <label for="icon_prefix">Quote Source</label>
+            <select id="source_name" name="source_name">
+            <option value="" disabled selected>Choose the source</option>
+            {% for source in sources %}
+            <option value="{{source.source_name}}">{{source.source_name}}</option>
+            {% endfor %}
+            </select>
+            <label>Quote source</label>
         </div>
     </div>
     <div class="row">

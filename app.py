@@ -171,15 +171,10 @@ def home():
         languages.insert_one(idiom)
         
     """
-
-    #for quote in quotes: need to be reviewed because does not work. it should create a list with the values of the key quote_source and delete the doubles
-     #   source = quote.get('quote_source') 
-      #  source_list = mylist.append(source) 
-    #mylist_to_dict = dict(mylist) 
     return render_template('home.html', 
     category=list(mongo.db.categories.find()),
     quotes=list(mongo.db.quotes.find()),
-    sources=mongo.db.sources.find()
+    sources=list(mongo.db.sources.find())
     # get_source=mylist_to_dict
     )
 
@@ -200,7 +195,7 @@ def get_category(category_id):
         category= list(mongo.db.categories.find()),
         categories=mongo.db.categories.find_one({'_id': ObjectId(category_id)}),
         quotes=list(mongo.db.quotes.find()),
-        sources=mongo.db.sources.find())
+        sources=list(mongo.db.sources.find()))
 
 @app.route('/get_author/<author>')
 def get_author(author):
@@ -209,13 +204,11 @@ def get_author(author):
         quote_author=author,
         category=list(mongo.db.categories.find()),
         quotes=list(mongo.db.quotes.find()),
-        sources=mongo.db.sources.find())
+        sources=list(mongo.db.sources.find()))
 
 @app.route('/get_source/<source_id>')
 def get_source(source_id):
     return render_template('getsource.html',
-        #quote=list(mongo.db.quotes.find({'quote_source': source})),
-        #quote_source=source,
         source=mongo.db.sources.find_one({'_id': ObjectId(source_id)}),
         category= list(mongo.db.categories.find()),
         quotes=list(mongo.db.quotes.find()),
@@ -229,7 +222,7 @@ def create_quote():
     quotes=list(mongo.db.quotes.find()),
     category=list(mongo.db.categories.find()),
     languages=mongo.db.languages.find(),
-    sources=mongo.db.sources.find())
+    sources=list(mongo.db.sources.find()))
 
 @app.route('/add_quote', methods=['POST'])
 def add_quote():
@@ -242,7 +235,7 @@ def modify(quote_id):
     return render_template('modifyquote.html',
     quote=mongo.db.quotes.find_one({'_id': ObjectId(quote_id)}),
     category=list(mongo.db.categories.find()),
-    sources=mongo.db.sources.find())
+    sources=list(mongo.db.sources.find()))
 
 @app.route('/modify_quote/<quote_id>', methods=['POST'])
 def modify_quote(quote_id):

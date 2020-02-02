@@ -4,8 +4,8 @@
 
     <h2 class="choosen-category">{{source.source_name}}</h2>
 
-    {% for quote in quote %}
-    {% if source.source_name == quote.quote_source %}
+    {% for quote in quotes %}
+    {% if quote.quote_source == source.source_name %}
         
         <div>
             <ul>

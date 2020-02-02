@@ -38,8 +38,8 @@
 
         <div id="source-section" class="source">
             <p class="source-title">Type of source</p>
-            {% for quote in quotes %}
-                <span><a class="waves-effect waves-light btn-large" href="{{url_for('get_source', source=quote.quote_source)}}">{{quote.quote_source}}</a></span>
+            {% for source in sources %}
+                <a class="waves-effect waves-light btn-large" href="{{url_for('get_source', source_id=source._id)}}">{{source.source_name}}</a>
             {% endfor %}
         </div>
     </div>
