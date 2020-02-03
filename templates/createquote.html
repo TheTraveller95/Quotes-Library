@@ -5,7 +5,7 @@
 <form action = '{{url_for("add_quote")}}' method="POST">
     <div class="row">
         <div class="input-field col s12">
-            <select id="category_name" name="category_name">
+            <select id="quote_category" name="quote_category">
             <option value="" disabled selected>Choose the category</option>
             {% for category in category %}
             <option value="{{category.category_name}}">{{category.category_name}}</option>
@@ -54,7 +54,7 @@
             <label>Quote Language</label>
         </div>
     </div>
-    <button class="btn waves-effect waves-light" type="submit">Submit
+    <button id="submit" class="btn waves-effect waves-light" type="submit">Submit
         <i class="material-icons right">send</i>
     </button>
 </form>
