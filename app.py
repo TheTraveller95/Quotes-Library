@@ -156,10 +156,51 @@ languages_list =[{"language":"English"},
 {"language":"Zazaki"},
 {"language":"Zulu"}]
 
+love_quotes_list = [
+{"quote_category":"Love",
+"quote_text":"I have decided to stick with love. Hate is too great a burden to bear.",
+"quote_author":"Martin Luther King, Jr.",
+"quote_source":"Book",
+"quote_source_name":"A Testament of Hope: The Essential Writings and Speeches",
+"quote_language":"English"},
+{"quote_category":"Love",
+"quote_text":"Keep love in your heart. A life without it is like a sunless garden when the flowers are dead.",
+"quote_author":"Oscar Wilde",
+"quote_source":"N/A",
+"quote_source_name":"N/A",
+"quote_language":"English"},
+{"quote_category":"Love",
+"quote_text":"En asuntos de amor, los locos son los que tienen más experiencia. De amor no preguntes nunca a los cuerdos; los cuerdos aman cuerdamente, que es como no haber amado nunca",
+"quote_author":"Jacinto Benavente",
+"quote_source":"N/A",
+"quote_source_name":"N/A",
+"quote_language":"Spanish"},
+{"quote_category":"Love",
+"quote_text":"El verdadero amor no es el amor propio, es el que consigue que el amante se abra a las demás personas y a la vida; no atosiga, no aísla, no rechaza, no persigue: solamente acepta",
+"quote_author":"Antonio Gala",
+"quote_source":"N/A",
+"quote_source_name":"N/A",
+"quote_language":"Spanish"},
+{"quote_category":"Love",
+"quote_text":"Hay quien ha venido al mundo para amar a una sola mujer y, consecuentemente, no es probable que tropiece con ella",
+"quote_author":"José Ortega y Gasset.",
+"quote_source":"N/A",
+"quote_source_name":"N/A",
+"quote_language":"Spanish"},
+{"quote_category":"Love",
+"quote_text":"Por eso juzgo y discierno, por cosa cierta y notoria, que tiene el amor su gloria a las puertas del infierno. ",
+"quote_author":"Miguel de Cervantes",
+"quote_source":"Book",
+"quote_source_name":"La Galatea, 1585, Libro III",
+"quote_language":"Spanish"}
+]
+
 
 
 
 @app.route('/')
+
+
 def home():
     quotes=mongo.db.quotes.find()
     mylist = []
@@ -178,20 +219,20 @@ def home():
     # get_source=mylist_to_dict
     )
 
-@app.route('/add_category')
+
+'''@app.route('/add_category')
 def add_category():
     return render_template('addcategory.html',
-    category=mongo.db.categories.find())
+    category=list(mongo.db.categories.find()))
+
 
 @app.route('/create_category', methods=['POST'])
 def create_category():
     category=mongo.db.categories
-    category_list=mongo.db.categories.find()
-    if request.form not in category_list:
-        category.insert_one(request.form.to_dict())
-    else:
-        flash('error')
-    return redirect('home')
+    category_list=list(mongo.db.categories.find())
+    category.insert_one(request.form.to_dict())
+    return redirect('home')'''
+    
 
 @app.route('/get_category/<category_id>')
 def get_category(category_id):
@@ -259,6 +300,10 @@ def modify_quote(quote_id):
 def delete_quote(quote_id):
     quote=mongo.db.quotes
     quote.delete_one({'_id': ObjectId(quote_id)})
+    return redirect('/home')
+
+@app.route('/no_delete_quote')
+def no_delete_quote():
     return redirect('home')
 
 if __name__ == '__main__':

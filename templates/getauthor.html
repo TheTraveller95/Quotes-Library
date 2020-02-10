@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<div class="get-author-container">
+<div class="container-author row">
 
-<h2 class="choosen-category">{{quote_author}}</h2>
+<h2 class="choosen-author">{{quote_author}}</h2>
 
     {% for quote in quote %}
 
-    <div>
+    <div class="col s6 m4 box">
         <ul>
             <li>{{quote.quote_text}}</li>
             <li>{{quote.quote_source_name}}</li>

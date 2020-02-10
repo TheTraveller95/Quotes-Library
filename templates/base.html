@@ -8,6 +8,8 @@
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
     <script src="static/js/main.js"></script>
     <link rel="stylesheet" href="{{url_for('static', filename= 'css/style.css')}}">
     <title>Document</title>
@@ -15,16 +17,16 @@
 <body>
     <header>
         <ul id="dropdown1" class="dropdown-content">
-            <li>
+            <li class="row">
                 {% for category in category %}
-                    <a class="waves-effect waves-light btn-large" href="{{url_for('get_category', category_id=category._id)}}">{{category.category_name}}</a>
+                    <a class="waves-effect waves-light btn-large col s6" href="{{url_for('get_category', category_id=category._id)}}">{{category.category_name}}</a>
                 {% endfor %}
             </li>
         </ul>
         <ul id="dropdown2" class="dropdown-content">
-            <li>
+            <li class="row">
                 {% for quote in quotes %}
-                    <a class="waves-effect waves-light btn-large" href="{{url_for('get_author', author=quote.quote_author)}}">{{quote.quote_author}}</a>
+                    <a class="waves-effect waves-light btn-large col s6" href="{{url_for('get_author', author=quote.quote_author)}}">{{quote.quote_author}}</a>
                 {% endfor %}
             </li>
         </ul>
@@ -37,8 +39,8 @@
         </ul>
         <nav>
             <div class="nav-wrapper">
-                <a href="{{url_for('home')}}" class="brand-logo">Logo</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <a href="{{url_for('home')}}" class="brand-logo"><img class="hide-on-med-and-down" src="https://live.staticflickr.com/65535/49507413677_9a4eee7992_s.jpg" alt="logo"></a>
                 <ul class="right hide-on-med-and-down">
                     <li>
                         <a class="dropdown-trigger" href="#!" data-target="dropdown1">Category<i class="material-icons right">arrow_drop_down</i></a>
@@ -50,7 +52,7 @@
                         <a class="dropdown-trigger" href="#!" data-target="dropdown3">Source<i class="material-icons right">arrow_drop_down</i></a>
                     </li>
                     <li>
-                        <a href="{{url_for('create_quote')}}" class="waves-effect waves-light btn">
+                        <a href="{{url_for('create_quote')}}" class="waves-effect waves-light btn pulse add-quote">
                             <i class="material-icons right add-nav">add_to_photos</i>Add Quote
                         </a>
                     </li>
@@ -81,9 +83,27 @@
     {% endblock %}
     </div>
 
-    <footer>
-        <div></div>
-    </footer>
+    <footer class="footer">
+            <div class="container social">
+                <div class="row div-social">
+                    <div class="col s4">
+                        <a href="https://twitter.com/andrecri22" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <div class="col s4">
+                        <a href="https://www.linkedin.com/in/andrea-crivellaro-24a28613b/" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <div class="col s4">
+                        <a href="https://www.instagram.com/the_travelovers2018/?hl=en" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     
     <script>
         $(document).ready(function(){
@@ -91,7 +111,9 @@
             $('.collapsible').collapsible();
             $('select').formSelect();
             $(".dropdown-trigger").dropdown();
+            $('.modal').modal();
         });
     </script>
+    <script src="https://kit.fontawesome.com/149ba925ed.js"></script>
 </body>
 </html>

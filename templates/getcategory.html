@@ -1,12 +1,11 @@
 {% extends 'home.html' %}
 
 {% block content %}
-<div class="container-cat">
+<div class="container-cat row">
     <h2 class="choosen-category">{{categories.category_name}}</h2>
-    <main>
     {% for quote in quotes %}
     {% if quote.quote_category == categories.category_name %}
-        <div class="row">
+    <div class="col s4 box">
         <ul>
             <li>
                 <div>
@@ -17,23 +16,33 @@
                     <span>{{quote.quote_source_name}}</span>
                 </div>
             </li>
-            <li>
+            <li class="edit-delete-buttons">
                 <span>
-                    <a href="{{url_for('modify', quote_id = quote._id)}}" class="waves-effect waves-light btn-small">
-                    <i class="material-icons right">cloud</i>Modify quote
+                    <a href="{{url_for('modify', quote_id = quote._id)}}" class="waves-effect waves-light btn-small modify">
+                    <i class="material-icons large">edit</i>
                     </a>
                 </span>
                 <span>
-                    <a href="{{url_for('delete_quote', quote_id = quote._id)}}" class="waves-effect waves-light btn-small">
-                    <i class="material-icons right">cloud</i>Delete quote
+                    <a id="delete-quote" class="waves-effect waves-light btn-small delete modal-trigger" href="#modal1">
+                    <i class="material-icons large">delete_forever</i>
                     </a>
                 </span>
             </li>
         </ul>
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Delete quote</h4>
+            <p>WARNING! Your are going to delete the quote forever! Are you sure? </p>
         </div>
+        <div class="modal-footer">
+            <a href="{{url_for('delete_quote', quote_id = quote._id)}}" class="modal-close waves-effect waves-green btn-flat">Yes</a>
+            <a href="{{url_for('no_delete_quote')}}" class="modal-close waves-effect waves-green btn-flat">No</a>
+        </div>
+    </div>
+    </div>
+    
     {% endif %}
     {% endfor %}
-    </main>
 </div>
 
 {% endblock %}

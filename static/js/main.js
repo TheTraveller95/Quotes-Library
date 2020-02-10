@@ -5,3 +5,7 @@ $('#cat-button-mobile').click(function(){
 $('#submit').click(function(){
     document.getElementById('category_name').toUppercase();
 })
+
+$('#delete-quote').click(function(){
+    document.getElementById('modal1').style.display='block';
+})

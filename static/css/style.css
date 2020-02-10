@@ -1,9 +1,12 @@
 
 body {
-    background-image: url(https://live.staticflickr.com/65535/49456465241_4a411c38f3_b.jpg);
+    background-attachment: fixed;
+    background-image: url(https://live.staticflickr.com/65535/49510823658_6a8f9a5d34_c.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    width: 100%;
+    height: 100%;
 }
 
 /*-------------------------------------buttons---------------------------------------*/
@@ -14,6 +17,21 @@ body {
 
 nav{
     background-color: rgba(33, 37, 77, 0.85);
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+.logo {
+    position: relative;
+    left: 5px;
+}
+
+.brand-logo>img{
+    height: 64px;
+    width: 80px;
+    border-radius: 25%;
+    margin-left: 5px;
 }
 
 /*.dropdownn{
@@ -32,13 +50,24 @@ nav{
 #dropdown2,
 #dropdown3 {
     top: 64px !important;
-    opacity: 0.4 !important;
+    opacity: 0.9 !important;
+    background-color: rgba(33, 37, 77, 0.85);
 }
+
+#dropdown1,
+#dropdown2 {
+  width: 310px !important;  
+}
+
+/*#dropdown2 {
+  width: 155px !important;  
+}*/
+
 
 #dropdown1 li,
 #dropdown2 li,
 #dropdown3 li {
-    background-color: grey !important;
+    background-color: rgba(33, 37, 77, 0.85);
     color: black !important;
 }
 
@@ -51,18 +80,34 @@ nav{
     color: white !important;
 }
 
+#dropdown1 a,
 #dropdown2 a {
-    font-size: 0.65rem;
+    padding-top: 15px;
 }
 
+#dropdown1 a:hover,
+#dropdown2 a:hover,
+#dropdown3 a:hover {
+    opacity: 1 !important;
+    background-color: rgb(0, 47, 255) !important;
+}
 
-.add-quote{
+/*#dropdown2> li> a {
+    height: 66px !important;
+}*/
+
+/*.dropdown-content {
+    width: 300px !important;
+}*/
+
+
+/*.add-quote{
     margin-bottom: 10px;
     margin-left: 5px;
     padding: 0 10;
     text-align: center;
     background-color: rgba(0, 0, 255, 0.6)
-}
+}*/
 
 #cat-section .right{
     margin-left: 0 !important;
@@ -73,43 +118,65 @@ nav{
     background-color: rgba(255, 196, 0, 0.75) !important;
 }
 
-#cat-section .btn:hover{
+/*#cat-section .btn:hover{
     background-color: rgba(0, 0, 255, 0.973) !important;
+}*/
+
+.btn{
+    border-radius: 25%;
+    background-color: rgb(0, 47, 255);
+    margin-bottom: 10px;
+    margin-left: 5px;
+    padding: 0 10;
+    text-align: center;
 }
 
-/*-------------------------------------------------------------------------------------*/
+.btn:hover{
+    background-color: rgb(0, 153, 255);
+    -webkit-animation-name: hvr-buzz;
+    animation-name: hvr-buzz;
+    -webkit-animation-duration: 0.15s;
+    animation-duration: 0.15s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+/*----------------------------------------home---------------------------------------------*/
 
 .home-description{
     background-color: rgba(77, 65, 25, 0.6);
     padding: 25px 10px;
-    margin-top: 100px;
+    margin-top: 10%;
     color: rgb(252, 212, 81);
     font-weight: 700;
+    border-radius: 10%;
 }
 
 .main-title{
     text-align: center;
     font-weight: 900;
     font-size: 50px;
-    margin-bottom: 10px;
+    margin-bottom: 0;
     margin-top: 0;
 }
 
 .secondary-title{
     margin-left: 60%;
+    margin-top: 0; 
 }
 
 .description{
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
     text-align: justify;
 }
 
-/*.button{
-    margin-left: 20%;
-    margin-right: 20%;
-    text-align: center;
-}*/
+.btn-large:hover {
+    opacity: 0.8;
+    background-color: rgb(238, 255, 0) !important;
+    color: black;
+}
 
 .categories{
     float: left;
@@ -125,32 +192,101 @@ nav{
     font-size: 35px;
     font-weight: 600;
     font-style: italic;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .choosen-category{
     text-align: center;
 }
 
-/*---------------------------------------------get author-----------------------------------------*/
-
-.get-author-container{
-    background-color: rgba(255, 255, 255, 0.4);
-    padding-bottom: 25px;
-    padding-left: 15px;
-    padding-right: 15px;
+.container{
+    width: 90%;
 }
 
+/*--------------------------------------------get category, get author, get source-----------------------------------------*/
 
-/*---------------------------------------------------------------------------------------------------*/
-
-footer{
-    margin-top: 25px;
-    height: 50px;
-    width: 100%;
-    background-color: rgba(33, 37, 77, 0.85);
+.container-cat,
+.container-author,
+.container-source{
+    background-color: rgba(77, 65, 25, 0.6);
+    padding: 25px 10px;
+    margin-top: 10%;
+    color: rgb(252, 212, 81);
+    font-weight: 700;
+    border-radius: 10%;
+    text-align: center;
 }
 
-/*-------------------------------------------------mobile--------------------------------------------*/
+.choosen-category,
+.choosen-author,
+.choosen-source {
+    text-align: center;
+    font-weight: 900;
+    font-size: 50px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.box {
+    border-style: dashed;
+    border-color: red;
+    width: 31% !important;
+    margin-left: 2% !important;
+    margin-top: 2%;
+    border-radius: 10%;
+    background-color: rgba(68, 68, 190, 0.815);
+}
+
+.modify,
+.delete {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    padding: 0;
+    margin: 5px;
+}
+
+.delete{
+    background-color: red;
+}
+
+.edit-delete-buttons {
+    text-align: center;
+}
+/*-------------------------------------------------footer--------------------------------------------------*/
+
+.footer {
+    position: static;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: transparent;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.social {
+    text-align: center;
+}
+
+.div-social i  {
+    display: inline-block;
+    box-shadow: 0px 0px 2px #888;
+    background-color: rgba(255, 255, 255, 0.87);
+    color: rgba(6, 121, 228, 0.8);
+    width: 41px;
+    height: 41px;
+    padding-top: 7px;
+    border-radius: 50%;
+    font-size: 28px;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+}
+
+/*-------------------------------------------------mobile nav--------------------------------------------*/
 
 #mobile-demo{
     height: 220px;
@@ -170,4 +306,24 @@ footer{
     width: 48px;
     color: white;
     padding: 0 20px;
+}
+
+/*-------------------------------------------------media query-----------------------------------------------*/
+
+@media (min-width: 376px) and (max-width: 1024px) {
+    .brand-logo {
+        position: absolute;
+        right: 0;
+    }
+}
+
+
+@media (width: 1024px){ /*ipad pro*/
+    
+}
+
+
+@media (min-width: 1025px) {
+
+    
 }

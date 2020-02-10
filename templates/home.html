@@ -2,51 +2,45 @@
 
 {% block content %}
 
-<main>
-    <div class="home-description">
-        <p class="main-title">Quotes Library</p>
-        <p class="secondary-title">by Andrea</p>
-        <section>
-            <p class="description">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio error ipsa iusto, asperiores
-                repudiandae soluta a id nihil repellendus similique ab excepturi sunt rerum vel corrupti, exercitationem 
-                ratione veritatis magni? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et beatae aliquid aspernatur adipisci 
-                aperiam officiis quidem consectetur, nobis deserunt eius. Culpa ducimus placeat facilis natus quis! Assumenda dignissimos amet dicta.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo deserunt delectus tenetur illo ducimus, maxime vero, eius voluptatum natus 
-                dignissimos iste consequatur reprehenderit nobis commodi nihil sed. Voluptatem, ut necessitatibus!
-            </p>
-        </section>
-    
-    
+<div class="home-description">
+    <p class="main-title">Quotes Library</p>
+    <p class="secondary-title">by Andrea</p>
+    <section>
+        <p class="description">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio error ipsa iusto, asperiores
+            repudiandae soluta a id nihil repellendus similique ab excepturi sunt rerum vel corrupti, exercitationem 
+            ratione veritatis magni? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et beatae aliquid aspernatur adipisci 
+            aperiam officiis quidem consectetur, nobis deserunt eius. Culpa ducimus placeat facilis natus quis! Assumenda dignissimos amet dicta.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo deserunt delectus tenetur illo ducimus, maxime vero, eius voluptatum natus 
+            dignissimos iste consequatur reprehenderit nobis commodi nihil sed. Voluptatem, ut necessitatibus!
+        </p>
+    </section>
 
-        <div id="cat-section" class="cat">
-            <span class="cat-title">Categories</span>
-            <a href="{{url_for('add_category')}}" class="waves-effect waves-light btn add-quote"><i class="material-icons right add-image">add_to_photos</i></a>
-        </div>
-        <div class="cat-loop">
-            {% for category in category %}
-            <a class="waves-effect waves-light btn-large" href="{{url_for('get_category', category_id=category._id)}}">{{category.category_name}}</a>
-            {% endfor %}
-        </div>
 
-        <div id="author-section" class="author">
-            <p class="author-title">Authors</p>
-            {% for quote in quotes %}
-                <span><a class="waves-effect waves-light btn-large" href="{{url_for('get_author', author=quote.quote_author)}}">{{quote.quote_author}}</a></span>
-            {% endfor %}
-        </div>
 
-        <div id="source-section" class="source">
-            <p class="source-title">Type of source</p>
-            {% for source in sources %}
-                <a class="waves-effect waves-light btn-large" href="{{url_for('get_source', source_id=source._id)}}">{{source.source_name}}</a>
-            {% endfor %}
-        </div>
+    <div id="cat-section" class="cat">
+        <p class="cat-title">Categories</p>
+    </div>
+    <div class="cat-loop">
+        {% for category in category %}
+        <a class="waves-effect waves-light btn-large" href="{{url_for('get_category', category_id=category._id)}}">{{category.category_name}}</a>
+        {% endfor %}
     </div>
 
-</main>
+    <div id="author-section" class="author">
+        <p class="author-title">Authors</p>
+        {% for quote in quotes %}
+            <span><a class="waves-effect waves-light btn-large" href="{{url_for('get_author', author=quote.quote_author)}}">{{quote.quote_author}}</a></span>
+        {% endfor %}
+    </div>
 
+    <div id="source-section" class="source">
+        <p class="source-title">Type of source</p>
+        {% for source in sources %}
+            <a class="waves-effect waves-light btn-large" href="{{url_for('get_source', source_id=source._id)}}">{{source.source_name}}</a>
+        {% endfor %}
+    </div>
+</div>
 
-
-    {% endblock %}
+{% endblock %}
 
