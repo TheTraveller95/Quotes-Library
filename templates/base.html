@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
-    <script src="static/js/main.js"></script>
     <link rel="stylesheet" href="{{url_for('static', filename= 'css/style.css')}}">
     <title>Document</title>
 </head>
@@ -52,7 +49,7 @@
                         <a class="dropdown-trigger" href="#!" data-target="dropdown3">Source<i class="material-icons right">arrow_drop_down</i></a>
                     </li>
                     <li>
-                        <a href="{{url_for('create_quote')}}" class="waves-effect waves-light btn pulse add-quote">
+                        <a id="add-quote-nav" href="{{url_for('create_quote')}}" class="waves-effect waves-light btn pulse add-quote">
                             <i class="material-icons right add-nav">add_to_photos</i>Add Quote
                         </a>
                     </li>
@@ -84,36 +81,31 @@
     </div>
 
     <footer class="footer">
-            <div class="container social">
-                <div class="row div-social">
-                    <div class="col s4">
-                        <a href="https://twitter.com/andrecri22" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                    <div class="col s4">
-                        <a href="https://www.linkedin.com/in/andrea-crivellaro-24a28613b/" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                    <div class="col s4">
-                        <a href="https://www.instagram.com/the_travelovers2018/?hl=en" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
+        <div class="container social">
+            <div class="row div-social">
+                <div class="col s4">
+                    <a href="https://twitter.com/andrecri22" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                <div class="col s4">
+                    <a href="https://www.linkedin.com/in/andrea-crivellaro-24a28613b/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <div class="col s4">
+                    <a href="https://www.instagram.com/the_travelovers2018/?hl=en" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
                 </div>
             </div>
-        </footer>
-    
-    <script>
-        $(document).ready(function(){
-            $('.sidenav').sidenav();
-            $('.collapsible').collapsible();
-            $('select').formSelect();
-            $(".dropdown-trigger").dropdown();
-            $('.modal').modal();
-        });
-    </script>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://kit.fontawesome.com/149ba925ed.js"></script>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+    
 </body>
 </html>

@@ -296,10 +296,23 @@ def modify_quote(quote_id):
     })
     return redirect(url_for('home'))
 
-@app.route('/delete_quote/<quote_id>')
-def delete_quote(quote_id):
+
+@app.route('/store_quote_id/<quote_id>')
+def store_quote_id(quote_id):
     quote=mongo.db.quotes
-    quote.delete_one({'_id': ObjectId(quote_id)})
+    id_quote=quote_id
+    return (id_quote)
+
+#@app.route('/delete_quote/<quote_id>')
+#def delete_quote(quote_id):
+    #quote=mongo.db.quotes
+    #quote.delete_one({'_id': ObjectId(quote_id)})
+    #return redirect('/home')
+
+@app.route('/delete_quote/<quote_deleted_id>')
+def delete_quote(quote_deleted_id):
+    quote=mongo.db.quotes
+    quote.delete_one({'_id': ObjectId(quote_deleted_id)})
     return redirect('/home')
 
 @app.route('/no_delete_quote')

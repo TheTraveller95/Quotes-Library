@@ -8,27 +8,44 @@
 
     {% for quote in quote %}
 
-    <div class="col s6 m4 box">
+    <div class="col s4 box">
         <ul>
-            <li>{{quote.quote_text}}</li>
-            <li>{{quote.quote_source_name}}</li>
             <li>
+                <div>
+                    {{quote.quote_text}}
+                </div>
+                <div>
+                    <span>{{quote.quote_author}} - </span>
+                    <span>{{quote.quote_source_name}}</span>
+                </div>
+            </li>
+            <li class="edit-delete-buttons">
                 <span>
-                    <a href="{{url_for('modify', quote_id = quote._id)}}" class="waves-effect waves-light btn-small">
-                    <i class="material-icons right">cloud</i>Modify quote
+                    <a href="{{url_for('modify', quote_id = quote._id)}}" class="waves-effect waves-light btn-small modify">
+                    <i class="material-icons large">edit</i>
                     </a>
                 </span>
                 <span>
-                    <a href="{{url_for('delete_quote', quote_id = quote._id)}}" class="waves-effect waves-light btn-small">
-                    <i class="material-icons right">cloud</i>Delete quote
+                    <a  class="waves-effect waves-light btn-small delete modal-trigger" href="#modal1">
+                    <i class="material-icons large">delete_forever</i>
                     </a>
                 </span>
             </li>
         </ul>
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Delete quote</h4>
+                <p>WARNING! Your are going to delete the quote forever! Are you sure? </p>
+            </div>
+            <div class="modal-footer">
+                <a id="delete-quote"  href="{{url_for('delete_quote', quote_id = quote._id)}}" class="modal-close waves-effect waves-green btn-flat">Yes</a>
+                <a href="{{url_for('no_delete_quote')}}" class="modal-close waves-effect waves-green btn-flat">No</a>
+            </div>
+        </div>
     </div>
-
+    
+    {% endif %}
     {% endfor %}
-
 </div>
 
 {% endblock %}

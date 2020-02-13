@@ -1,11 +1,11 @@
-$('#cat-button-mobile').click(function(){
-    document.getElementById("mobile-demo").style.display="none";
+
+
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+    $('.collapsible').collapsible();
+    $('select').formSelect();
+    $(".dropdown-trigger").dropdown();
+    $('.modal').modal();
 });
 
-$('#submit').click(function(){
-    document.getElementById('category_name').toUppercase();
-})
 
-$('#delete-quote').click(function(){
-    document.getElementById('modal1').style.display='block';
-})
