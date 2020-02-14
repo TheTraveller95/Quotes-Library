@@ -29,8 +29,8 @@
 
     <div id="author-section" class="author">
         <p class="author-title">Authors</p>
-        {% for quote in quotes %}
-            <span><a class="waves-effect waves-light btn-large" href="{{url_for('get_author', author=quote.quote_author)}}">{{quote.quote_author}}</a></span>
+        {% for language in languages %}
+            <a class="waves-effect waves-light btn-large" href="{{url_for('get_language', language_id=language._id)}}">{{language.language_name}}</a>
         {% endfor %}
     </div>
 

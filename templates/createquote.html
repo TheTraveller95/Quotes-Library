@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<form action = '{{url_for("add_quote")}}' method="POST">
+<form id="quote-form" action = '{{url_for("add_quote")}}' method="POST">
     <div class="row">
         <div class="input-field col s12">
             <select id="quote_category" name="quote_category">
             <option value="" disabled selected>Choose the category</option>
             {% for category in category %}
-            <option value="{{category.category_name}}">{{category.category_name}}</option>
+            <option id="select-category" value="{{category.category_name}}">{{category.category_name}}</option>
             {% endfor %}
             </select>
             <label>Quote Category</label>

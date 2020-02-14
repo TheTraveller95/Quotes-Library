@@ -229,6 +229,7 @@ nav{
 }
 
 .box {
+    height: 214px ;
     border-style: dashed;
     border-color: red;
     width: 31% !important;
@@ -254,6 +255,12 @@ nav{
 .edit-delete-buttons {
     text-align: center;
 }
+
+#quote-form {
+    position: relative;
+    margin-top: 10%;
+}
+
 /*-------------------------------------------------footer--------------------------------------------------*/
 
 .footer {

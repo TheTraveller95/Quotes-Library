@@ -20,13 +20,7 @@
                 {% endfor %}
             </li>
         </ul>
-        <ul id="dropdown2" class="dropdown-content">
-            <li class="row">
-                {% for quote in quotes %}
-                    <a class="waves-effect waves-light btn-large col s6" href="{{url_for('get_author', author=quote.quote_author)}}">{{quote.quote_author}}</a>
-                {% endfor %}
-            </li>
-        </ul>
+        
         <ul id="dropdown3" class="dropdown-content">
             <li>
                 {% for source in sources %}
@@ -42,9 +36,7 @@
                     <li>
                         <a class="dropdown-trigger" href="#!" data-target="dropdown1">Category<i class="material-icons right">arrow_drop_down</i></a>
                     </li>
-                    <li>
-                        <a class="dropdown-trigger" href="#!" data-target="dropdown2">Author<i class="material-icons right">arrow_drop_down</i></a>
-                    </li>
+                    
                     <li>
                         <a class="dropdown-trigger" href="#!" data-target="dropdown3">Source<i class="material-icons right">arrow_drop_down</i></a>
                     </li>

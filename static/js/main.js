@@ -1,5 +1,3 @@
-
-
 $(document).ready(function(){
     $('.sidenav').sidenav();
     $('.collapsible').collapsible();
@@ -7,5 +5,7 @@ $(document).ready(function(){
     $(".dropdown-trigger").dropdown();
     $('.modal').modal();
 });
+
+
 
 

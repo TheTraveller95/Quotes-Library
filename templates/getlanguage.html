@@ -1,11 +1,15 @@
 {% extends 'home.html' %}
 
 {% block content %}
-<div class="container-cat row">
-    <h2 class="choosen-category">{{categories.category_name}}</h2>
+
+<div class="container-author row">
+
+<h2 class="choosen-author">{{language.language_name}}</h2>
+
     {% for quote in quotes %}
-    {% if quote.quote_category == categories.category_name %}
-    <div class="col s2 box">
+    {% if quote.quote_language == language.language_name %}
+
+    <div class="col s4 box">
         <ul>
             <li>
                 <div>
@@ -23,7 +27,7 @@
                     </a>
                 </span>
                 <span>
-                    <a id="delete_quote" class="waves-effect waves-light btn-small delete modal-trigger" href="{{ url_for('store_quote_id', quote_id = quote._id)}}">
+                    <a  class="waves-effect waves-light btn-small delete modal-trigger" href="#modal1">
                     <i class="material-icons large">delete_forever</i>
                     </a>
                 </span>
@@ -35,12 +39,11 @@
                 <p>WARNING! Your are going to delete the quote forever! Are you sure? </p>
             </div>
             <div class="modal-footer">
-                <a id="delete-quote"  href="{{url_for('delete_quote', quote_deleted_id = quote_id)}}" class="modal-close waves-effect waves-green btn-flat">Yes</a>
+                <a id="delete-quote"  href="{{url_for('delete_quote', quote_id = quote._id)}}" class="modal-close waves-effect waves-green btn-flat">Yes</a>
                 <a href="{{url_for('no_delete_quote')}}" class="modal-close waves-effect waves-green btn-flat">No</a>
             </div>
         </div>
     </div>
-    
     {% endif %}
     {% endfor %}
 </div>

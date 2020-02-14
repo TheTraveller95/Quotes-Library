@@ -11,150 +11,151 @@ app.config['MONGO_URI'] = 'mongodb+srv://root:r00tUser@myfirstcluster-p7dea.mong
 
 mongo = PyMongo(app)
 
-languages_list =[{"language":"English"},
-{"language":"Abkhaz"},
-{"language":"Adyghe"},
-{"language":"Afrikaans"},
-{"language":"Akan"},
-{"language":"Albanian"},
-{"language":"AmericanSignLanguage"},
-{"language":"Amharic"},
-{"language":"Arabic"},
-{"language":"Aragonese"},
-{"language":"Aramaic"},
-{"language":"Armenian"},
-{"language":"Assamese"},
-{"language":"Aymara"},
-{"language":"Balinese"},
-{"language":"Basque"},
-{"language":"Betawi"},
-{"language":"Bosnian"},
-{"language":"Breton"},
-{"language":"Bulgarian"},
-{"language":"Cantonese"},
-{"language":"Catalan"},
-{"language":"Cherokee"},
-{"language":"Chickasaw"},
-{"language":"Chinese"},
-{"language":"Coptic"},
-{"language":"Cornish"},
-{"language":"Corsican"},
-{"language":"CrimeanTatar"},
-{"language":"Croatian"},
-{"language":"Czech"},
-{"language":"Danish"},
-{"language":"Dutch"},
-{"language":"Dawro"},
-{"language":"Esperanto"},
-{"language":"Estonian"},
-{"language":"Ewe"},
-{"language":"FijiHindi"},
-{"language":"Filipino"},
-{"language":"Finnish"},
-{"language":"French"},
-{"language":"Galician"},
-{"language":"Georgian"},
-{"language":"German"},
-{"language":"Greek,Modern"},
-{"language":"AncientGreek"},
-{"language":"Greenlandic"},
-{"language":"HaitianCreole"},
-{"language":"Hawaiian"},
-{"language":"Hebrew"},
-{"language":"Hindi"},
-{"language":"Hungarian"},
-{"language":"Icelandic"},
-{"language":"Indonesian"},
-{"language":"Inuktitut"},
-{"language":"Interlingua"},
-{"language":"Irish"},
-{"language":"Italian"},
-{"language":"Japanese"},
-{"language":"Javanese"},
-{"language":"Kabardian"},
-{"language":"Kalasha"},
-{"language":"Kannada"},
-{"language":"Kashubian"},
-{"language":"Khmer"},
-{"language":"Kinyarwanda"},
-{"language":"Korean"},
-{"language":"Kurdish/Kurdî"},
-{"language":"Ladin"},
-{"language":"Latgalian"},
-{"language":"Latin"},
-{"language":"Lingala"},
-{"language":"Livonian"},
-{"language":"Lojban"},
-{"language":"LowerSorbian"},
-{"language":"LowGerman"},
-{"language":"Macedonian"},
-{"language":"Malay"},
-{"language":"Malayalam"},
-{"language":"Mandarin"},
-{"language":"Manx"},
-{"language":"Maori"},
-{"language":"MauritianCreole"},
-{"language":"MiddleEnglish"},
-{"language":"MiddleLowGerman"},
-{"language":"MinNan"},
-{"language":"Mongolian"},
-{"language":"Norwegian"},
-{"language":"OldArmenian"},
-{"language":"OldEnglish"},
-{"language":"OldFrench"},
-{"language":"OldJavanese"},
-{"language":"OldNorse"},
-{"language":"OldPrussian"},
-{"language":"Oriya"},
-{"language":"Pangasinan"},
-{"language":"Papiamentu"},
-{"language":"Pashto"},
-{"language":"Persian"},
-{"language":"Pitjantjatjara"},
-{"language":"Polish"},
-{"language":"Portuguese"},
-{"language":"Proto-Slavic"},
-{"language":"Quenya"},
-{"language":"Rajasthani"},
-{"language":"RapaNui"},
-{"language":"Romanian"},
-{"language":"Russian"},
-{"language":"Sanskrit"},
-{"language":"Scots"},
-{"language":"ScottishGaelic"},
-{"language":"Semai"},
-{"language":"Serbian"},
-{"language":"Serbo-Croatian"},
-{"language":"Slovak"},
-{"language":"Slovene"},
-{"language":"Spanish"},
-{"language":"Sinhalese"},
-{"language":"Swahili"},
-{"language":"Swedish"},
-{"language":"Tagalog"},
-{"language":"Tajik"},
-{"language":"Tamil"},
-{"language":"Tarantino"},
-{"language":"Telugu"},
-{"language":"Thai"},
-{"language":"TokPisin"},
-{"language":"Turkish"},
-{"language":"Twi"},
-{"language":"Ukrainian"},
-{"language":"UpperSorbian"},
-{"language":"Urdu"},
-{"language":"Uyghur"},
-{"language":"Uzbek"},
-{"language":"Venetian"},
-{"language":"Vietnamese"},
-{"language":"Vilamovian"},
-{"language":"Volapük"},
-{"language":"Võro"},
-{"language":"Welsh"},
-{"language":"Xhosa"},
-{"language":"Yiddish"},
-{"language":"Zazaki"},
-{"language":"Zulu"}]
+languages_list =[{"language_name":"English"},
+{"language_name":"Abkhaz"},
+{"language_name":"Adyghe"},
+{"language_name":"Afrikaans"},
+{"language_name":"Akan"},
+{"language_name":"Albanian"},
+{"language_name":"AmericanSignLanguage"},
+{"language_name":"Amharic"},
+{"language_name":"Arabic"},
+{"language_name":"Aragonese"},
+{"language_name":"Aramaic"},
+{"language_name":"Armenian"},
+{"language_name":"Assamese"},
+{"language_name":"Aymara"},
+{"language_name":"Balinese"},
+{"language_name":"Basque"},
+{"language_name":"Betawi"},
+{"language_name":"Bosnian"},
+{"language_name":"Breton"},
+{"language_name":"Bulgarian"},
+{"language_name":"Cantonese"},
+{"language_name":"Catalan"},
+{"language_name":"Cherokee"},
+{"language_name":"Chickasaw"},
+{"language_name":"Chinese"},
+{"language_name":"Coptic"},
+{"language_name":"Cornish"},
+{"language_name":"Corsican"},
+{"language_name":"CrimeanTatar"},
+{"language_name":"Croatian"},
+{"language_name":"Czech"},
+{"language_name":"Danish"},
+{"language_name":"Dutch"},
+{"language_name":"Dawro"},
+{"language_name":"Esperanto"},
+{"language_name":"Estonian"},
+{"language_name":"Ewe"},
+{"language_name":"FijiHindi"},
+{"language_name":"Filipino"},
+{"language_name":"Finnish"},
+{"language_name":"French"},
+{"language_name":"Galician"},
+{"language_name":"Georgian"},
+{"language_name":"German"},
+{"language_name":"Greek,Modern"},
+{"language_name":"AncientGreek"},
+{"language_name":"Greenlandic"},
+{"language_name":"HaitianCreole"},
+{"language_name":"Hawaiian"},
+{"language_name":"Hebrew"},
+{"language_name":"Hindi"},
+{"language_name":"Hungarian"},
+{"language_name":"Icelandic"},
+{"language_name":"Indonesian"},
+{"language_name":"Inuktitut"},
+{"language_name":"Interlingua"},
+{"language_name":"Irish"},
+{"language_name":"Italian"},
+{"language_name":"Japanese"},
+{"language_name":"Javanese"},
+{"language_name":"Kabardian"},
+{"language_name":"Kalasha"},
+{"language_name":"Kannada"},
+{"language_name":"Kashubian"},
+{"language_name":"Khmer"},
+{"language_name":"Kinyarwanda"},
+{"language_name":"Korean"},
+{"language_name":"Kurdish/Kurdî"},
+{"language_name":"Ladin"},
+{"language_name":"Latgalian"},
+{"language_name":"Latin"},
+{"language_name":"Lingala"},
+{"language_name":"Livonian"},
+{"language_name":"Lojban"},
+{"language_name":"LowerSorbian"},
+{"language_name":"LowGerman"},
+{"language_name":"Macedonian"},
+{"language_name":"Malay"},
+{"language_name":"Malayalam"},
+{"language_name":"Mandarin"},
+{"language_name":"Manx"},
+{"language_name":"Maori"},
+{"language_name":"MauritianCreole"},
+{"language_name":"MiddleEnglish"},
+{"language_name":"MiddleLowGerman"},
+{"language_name":"MinNan"},
+{"language_name":"Mongolian"},
+{"language_name":"Norwegian"},
+{"language_name":"OldArmenian"},
+{"language_name":"OldEnglish"},
+{"language_name":"OldFrench"},
+{"language_name":"OldJavanese"},
+{"language_name":"OldNorse"},
+{"language_name":"OldPrussian"},
+{"language_name":"Oriya"},
+{"language_name":"Pangasinan"},
+{"language_name":"Papiamentu"},
+{"language_name":"Pashto"},
+{"language_name":"Persian"},
+{"language_name":"Pitjantjatjara"},
+{"language_name":"Polish"},
+{"language_name":"Portuguese"},
+{"language_name":"Proto-Slavic"},
+{"language_name":"Quenya"},
+{"language_name":"Rajasthani"},
+{"language_name":"RapaNui"},
+{"language_name":"Romanian"},
+{"language_name":"Russian"},
+{"language_name":"Sanskrit"},
+{"language_name":"Scots"},
+{"language_name":"ScottishGaelic"},
+{"language_name":"Semai"},
+{"language_name":"Serbian"},
+{"language_name":"Serbo-Croatian"},
+{"language_name":"Slovak"},
+{"language_name":"Slovene"},
+{"language_name":"Spanish"},
+{"language_name":"Sinhalese"},
+{"language_name":"Swahili"},
+{"language_name":"Swedish"},
+{"language_name":"Tagalog"},
+{"language_name":"Tajik"},
+{"language_name":"Tamil"},
+{"language_name":"Tarantino"},
+{"language_name":"Telugu"},
+{"language_name":"Thai"},
+{"language_name":"TokPisin"},
+{"language_name":"Turkish"},
+{"language_name":"Twi"},
+{"language_name":"Ukrainian"},
+{"language_name":"UpperSorbian"},
+{"language_name":"Urdu"},
+{"language_name":"Uyghur"},
+{"language_name":"Uzbek"},
+{"language_name":"Venetian"},
+{"language_name":"Vietnamese"},
+{"language_name":"Vilamovian"},
+{"language_name":"Volapük"},
+{"language_name":"Võro"},
+{"language_name":"Welsh"},
+{"language_name":"Xhosa"},
+{"language_name":"Yiddish"},
+{"language_name":"Zazaki"},
+{"language_name":"Zulu"}
+]
 
 love_quotes_list = [
 {"quote_category":"Love",
@@ -203,19 +204,19 @@ love_quotes_list = [
 
 def home():
     quotes=mongo.db.quotes.find()
-    mylist = []
+    mylist = [] 
     """
     This part of the funsction has been usedfor creating a collection in mongodb with all the languages
-
+    
     languages = mongo.db.languages
     for idiom in languages_list:
         languages.insert_one(idiom)
-    """  
-    
+    """ 
     return render_template('home.html', 
     category=list(mongo.db.categories.find()),
     quotes=list(mongo.db.quotes.find()),
-    sources=list(mongo.db.sources.find())
+    sources=list(mongo.db.sources.find()),
+    languages=list(mongo.db.languages.find())
     # get_source=mylist_to_dict
     )
 
@@ -242,14 +243,16 @@ def get_category(category_id):
         quotes=list(mongo.db.quotes.find()),
         sources=list(mongo.db.sources.find()))
 
-@app.route('/get_author/<author>')
-def get_author(author):
-    return render_template('getauthor.html',
-        quote=list(mongo.db.quotes.find({'quote_author': author})),
-        quote_author=author,
-        category=list(mongo.db.categories.find()),
+
+
+@app.route('/get_language/<language_id>') # modificar para que sea igual al get_source
+def get_language(language_id):
+    return render_template('getlanguage.html',
+        language=mongo.db.languages.find_one({'_id': ObjectId(language_id)}),
+        category= list(mongo.db.categories.find()),
         quotes=list(mongo.db.quotes.find()),
-        sources=list(mongo.db.sources.find()))
+        sources=list(mongo.db.sources.find()),
+        languages=list(mongo.db.languages.find()))
 
 @app.route('/get_source/<source_id>')
 def get_source(source_id):
@@ -257,8 +260,7 @@ def get_source(source_id):
         source=mongo.db.sources.find_one({'_id': ObjectId(source_id)}),
         category= list(mongo.db.categories.find()),
         quotes=list(mongo.db.quotes.find()),
-        sources=list(mongo.db.sources.find()),
-        )
+        sources=list(mongo.db.sources.find()))
 
 
 @app.route('/create_quote')
@@ -274,6 +276,7 @@ def add_quote():
     quote = mongo.db.quotes
     quote.insert_one(request.form.to_dict())
     return redirect(url_for('home'))
+
 
 @app.route('/modify/<quote_id>')
 def modify(quote_id):
@@ -303,17 +306,17 @@ def store_quote_id(quote_id):
     id_quote=quote_id
     return (id_quote)
 
-#@app.route('/delete_quote/<quote_id>')
-#def delete_quote(quote_id):
-    #quote=mongo.db.quotes
-    #quote.delete_one({'_id': ObjectId(quote_id)})
-    #return redirect('/home')
+@app.route('/delete_quote/<quote_id>')
+def delete_quote(quote_id):
+    quote=mongo.db.quotes
+    quote.delete_one({'_id': ObjectId(quote_id)})
+    return redirect('/home')
 
-@app.route('/delete_quote/<quote_deleted_id>')
+"""@app.route('/delete_quote/<quote_deleted_id>')
 def delete_quote(quote_deleted_id):
     quote=mongo.db.quotes
     quote.delete_one({'_id': ObjectId(quote_deleted_id)})
-    return redirect('/home')
+    return redirect('/home')"""
 
 @app.route('/no_delete_quote')
 def no_delete_quote():
