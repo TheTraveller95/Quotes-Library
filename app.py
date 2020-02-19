@@ -216,8 +216,17 @@ def home():
     category=list(mongo.db.categories.find()),
     quotes=list(mongo.db.quotes.find()),
     sources=list(mongo.db.sources.find()),
-    languages=list(mongo.db.languages.find())
+    languages=list(mongo.db.languages.find().limit(50))
     # get_source=mylist_to_dict
+    )
+    
+@app.route('/get_all_languages')
+def get_all_languages():
+    return render_template('home_two.html', 
+    category=list(mongo.db.categories.find()),
+    quotes=list(mongo.db.quotes.find()),
+    sources=list(mongo.db.sources.find()),
+    languages=list(mongo.db.languages.find())
     )
 
 
@@ -300,12 +309,6 @@ def modify_quote(quote_id):
     return redirect(url_for('home'))
 
 
-@app.route('/store_quote_id/<quote_id>')
-def store_quote_id(quote_id):
-    quote=mongo.db.quotes
-    id_quote=quote_id
-    return (id_quote)
-
 @app.route('/delete_quote/<quote_id>')
 def delete_quote(quote_id):
     quote=mongo.db.quotes
@@ -318,9 +321,7 @@ def delete_quote(quote_deleted_id):
     quote.delete_one({'_id': ObjectId(quote_deleted_id)})
     return redirect('/home')"""
 
-@app.route('/no_delete_quote')
-def no_delete_quote():
-    return redirect('home')
+
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=os.getenv('PORT'), debug=True)

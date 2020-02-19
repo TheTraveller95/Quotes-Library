@@ -32,9 +32,6 @@
         {% for language in languages %}
             <a class="waves-effect waves-light btn-large" href="{{url_for('get_language', language_id=language._id)}}">{{language.language_name}}</a>
         {% endfor %}
-        <div id="more-languages">
-            <a href="{{url_for('get_all_languages')}}">See more languages...</a>
-        </div>
     </div>
 
     <div id="source-section" class="source">

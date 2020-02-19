@@ -204,11 +204,18 @@ nav{
     width: 90%;
 }
 
+#more-languages {
+    margin-top: 25px;
+    font-weight: 700;
+    font-size: large;
+}
+
 /*--------------------------------------------get category, get author, get source-----------------------------------------*/
 
 .container-cat,
 .container-author,
-.container-source{
+.container-source,
+.container-form{
     background-color: rgba(77, 65, 25, 0.6);
     padding: 25px 10px;
     margin-top: 10%;
@@ -218,14 +225,23 @@ nav{
     text-align: center;
 }
 
+.container-form{
+    padding: 45px 20px;
+}
+
 .choosen-category,
 .choosen-author,
-.choosen-source {
+.choosen-source,
+.add-new-quote {
     text-align: center;
     font-weight: 900;
     font-size: 50px;
     margin-bottom: 0;
     margin-top: 0;
+}
+
+.add-new-quote{
+    margin-bottom: 20px;
 }
 
 .box {
@@ -256,9 +272,32 @@ nav{
     text-align: center;
 }
 
-#quote-form {
+/*#quote-form {
     position: relative;
     margin-top: 10%;
+}*/
+
+
+/*-------------------------------------------------create quote-------------------------------------------*/
+
+.form-label{
+    color: white !important;
+    font-size: 700 !important;
+    padding-left: 15px;
+}
+
+.form-input{
+    color: rgb(0, 47, 255); 
+    font-size: 700;
+    background-color: rgba(255, 255, 255, 0.774) !important;
+}
+
+.select-dropdown{
+    color: rgb(0, 47, 255) !important;
+    font-size: 700 !important;
+    background-color: rgba(255, 255, 255, 0.774) !important;
+    margin-top: 16px !important;
+    padding-left: 15px !important;
 }
 
 /*-------------------------------------------------footer--------------------------------------------------*/
