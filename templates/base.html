@@ -50,14 +50,10 @@
         </nav>
 
         <ul class="sidenav" id="mobile-demo">
-            <li>
-                <a id="cat-button-mobile" href="#cat-section">Categories</a>
-            </li>
-            <li>
-                <a id="author-button-mobile" href="#author-section">Authors</a>
-            </li>
-            <li>
-                <a id="source-button-mobile" href="#source-section">Source</a>
+            <li id="home-nav-button">
+                <a id="cat-button-mobile" href="{{url_for('go_home')}}">
+                    <i class="material-icons left" id="home-button">home</i>Home
+                </a>
             </li>
             <li>
                 <a href="{{url_for('create_quote')}}" class="waves-effect waves-light btn-small add-quote">

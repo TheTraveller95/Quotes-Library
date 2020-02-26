@@ -196,6 +196,99 @@ love_quotes_list = [
 "quote_language":"Spanish"}
 ]
 
+mixed_quotes_list= [
+{"quote_category":"Love",
+"quote_text":"If your heart is a volcano, how shall you expect flowers to bloom?",
+"quote_author":"Khalil Gibran",
+"quote_source":"N/A",
+"quote_source_name":"N/A",
+"quote_language":"English"},
+{"quote_category":"Love",
+"quote_text":"As the Father has loved me, so have I loved you.",
+"quote_author":"Jesus Christ",
+"quote_source":"Book",
+"quote_source_name":"Bible",
+"quote_language":"English"},
+{"quote_category":"Love",
+"quote_text":"Whatever our souls are made of, his and mine are the same.",
+"quote_author":"Emily Bronte",
+"quote_source":"Book",
+"quote_source_name":"N/A",
+"quote_language":"English"},
+{"quote_category":"Love",
+"quote_text":"Gravitation is not responsible for people falling in love.",
+"quote_author":"Albert Einstein",
+"quote_source":"N/A",
+"quote_source_name":"N/A",
+"quote_language":"English"},
+{"quote_category":"Life",
+"quote_text":"The purpose of our lives is to be happy.",
+"quote_author":"Dalai Lama",
+"quote_source":"N/A",
+"quote_source_name":"N/A",
+"quote_language":"English"},
+{"quote_category":"Life",
+"quote_text":"Life is what happens when you’re busy making other plans.",
+"quote_author":"John Lennon",
+"quote_source":"N/A",
+"quote_source_name":"N/A",
+"quote_language":"English"},
+{"quote_category":"Life",
+"quote_text":"You only live once, but if you do it right, once is enough.",
+"quote_author":"Mae West",
+"quote_source":"N/A",
+"quote_source_name":"N/A",
+"quote_language":"English"},
+{"quote_category":"Life",
+"quote_text":"Many of life’s failures are people who did not realize how close they were to success when they gave up.",
+"quote_author":"Thomas A. Edison",
+"quote_source":"N/A",
+"quote_source_name":"N/A",
+"quote_language":"English"},
+{"quote_category":"Life",
+"quote_text":"Never let the fear of striking out keep you from playing the game.",
+"quote_author":"Babe Ruth",
+"quote_source":"N/A",
+"quote_source_name":"N/A",
+"quote_language":"English"},
+{"quote_category":"Life",
+"quote_text":"Money and success don’t change people; they merely amplify what is already there.",
+"quote_author":"Will Smith",
+"quote_source":"N/A",
+"quote_source_name":"N/A",
+"quote_language":"English"},
+{"quote_category":"Travel",
+"quote_text":"The world is a book and those who do not travel read only a page.",
+"quote_author":"Saint Augustine",
+"quote_source":"N/A",
+"quote_source_name":"N/A",
+"quote_language":"English"},
+{"quote_category":"Travel",
+"quote_text":"Not all those who wander are lost",
+"quote_author":"J.R.R. Tolkien",
+"quote_source":"N/A",
+"quote_source_name":"N/A",
+"quote_language":"English"},
+{"quote_category":"Travel",
+"quote_text":"Life is either a daring adventure or nothing at all",
+"quote_author":"Helen Keller",
+"quote_source":"N/A",
+"quote_source_name":"N/A",
+"quote_language":"English"},
+{"quote_category":"Travel",
+"quote_text":"Take only memories, leave only footprints",
+"quote_author":"Chief Seattle",
+"quote_source":"N/A",
+"quote_source_name":"N/A",
+"quote_language":"English"},
+{"quote_category":"Travel",
+"quote_text":"Never go on trips with anyone you do not love.",
+"quote_author":"Hemmingway",
+"quote_source":"N/A",
+"quote_source_name":"N/A",
+"quote_language":"English"}
+]
+
 
 
 
@@ -219,6 +312,11 @@ def home():
     languages=list(mongo.db.languages.find().limit(50))
     # get_source=mylist_to_dict
     )
+
+@app.route('/go_home')
+def go_home():
+    return redirect('home')
+
     
 @app.route('/get_all_languages')
 def get_all_languages():

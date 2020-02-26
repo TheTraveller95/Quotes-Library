@@ -6,8 +6,4 @@ $(document).ready(function(){
     $('.modal').modal();
 });
 
-$('#more-languages').click(function(){
-    document.getElementById('more-languages').style.display= 'none';
-})
-
 

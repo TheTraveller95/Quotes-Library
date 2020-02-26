@@ -3,7 +3,7 @@
 {% block content %}
     <div class="container-source row">
 
-    <h2 class="choosen-source">{{source.source_name}}</h2>
+    <h2 class="choosen-source">Source: {{source.source_name}}</h2>
 
     {% for quote in quotes %}
     {% if quote.quote_source == source.source_name %}
@@ -26,22 +26,12 @@
                     </a>
                 </span>
                 <span>
-                    <a  class="waves-effect waves-light btn-small delete modal-trigger" href="#modal1">
+                    <a id="delete_quote" class="waves-effect waves-light btn-small delete modal-trigger" href="{{url_for('delete_quote', quote_id = quote._id)}}">
                     <i class="material-icons large">delete_forever</i>
                     </a>
                 </span>
             </li>
         </ul>
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <h4>Delete quote</h4>
-                <p>WARNING! Your are going to delete the quote forever! Are you sure? </p>
-            </div>
-            <div class="modal-footer">
-                <a id="delete-quote"  href="{{url_for('delete_quote', quote_id = quote._id)}}" class="modal-close waves-effect waves-green btn-flat">Yes</a>
-                <a href="{{url_for('no_delete_quote')}}" class="modal-close waves-effect waves-green btn-flat">No</a>
-            </div>
-        </div>
     </div>
     
     {% endif %}

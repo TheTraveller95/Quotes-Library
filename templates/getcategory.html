@@ -1,11 +1,11 @@
 {% extends 'home.html' %}
 
 {% block content %}
-<div class="container-cat row">
-    <h2 class="choosen-category">{{categories.category_name}}</h2>
+<div class="row container-cat">
+    <h2 class="choosen-category">Category: {{categories.category_name}}</h2>
     {% for quote in quotes %}
     {% if quote.quote_category == categories.category_name %}
-    <div class="col s2 box">
+    <div class="col s12 box">
         <ul>
             <li>
                 <div>
@@ -23,7 +23,7 @@
                     </a>
                 </span>
                 <span>
-                    <a id="delete_quote" class="waves-effect waves-light btn-small delete modal-trigger" href="{{url_for('delete_quote', quote_id = quote_id)}}">
+                    <a id="delete_quote" class="waves-effect waves-light btn-small delete modal-trigger" href="{{url_for('delete_quote', quote_id = quote._id)}}">
                     <i class="material-icons large">delete_forever</i>
                     </a>
                 </span>
