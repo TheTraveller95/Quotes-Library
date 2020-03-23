@@ -411,7 +411,7 @@ def modify_quote(quote_id):
 def delete_quote(quote_id):
     quote=mongo.db.quotes
     quote.delete_one({'_id': ObjectId(quote_id)})
-    return redirect('/home')
+    return redirect(url_for('home'))
 
 """@app.route('/delete_quote/<quote_deleted_id>')
 def delete_quote(quote_deleted_id):
