@@ -142,7 +142,7 @@ def modify(quote_id):
             'quote_source_name': request.form.get('quote_source_name'),
             'quote_language': request.form.get('quote_language')
         })
-        return redirect(url_for('home'))
+        return redirect(url_for('home')) # cannot redirect to a differen
 
     return render_template('modifyquote.html',
         quote=mongo.db.quotes.find_one({'_id': ObjectId(quote_id)}),
