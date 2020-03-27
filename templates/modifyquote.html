@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<form action = '{{url_for("modify_quote", quote_id=quote._id)}}' method="POST">
+<form action = '{{url_for("modify", quote_id=quote._id)}}' method="POST">
     <div class="row">
         <div class="input-field col s12">
             <select id="quote_category" name="quote_category">
@@ -44,14 +44,16 @@
         </div>
     </div>
     <div class="row">
-        <div class="input-field col s12">
-            <select id="quote_language" name="quote_language">
-            <option value="" disabled selected>Choose the language</option>
-            {% for idiom in languages %}
-            <option value="{{idiom.language}}">{{idiom.language}}</option>
-            {% endfor %}
-            </select>
-            <label>Language</label>
+        <div class="row">
+            <div class="input-field col s12">
+                <select id="language_name" name="language_name">
+                <option class="choose-idiom" value="" disabled selected>Click to choose the language</option>
+                {% for idiom in languages %}
+                <option value="{{idiom.language_name}}">{{idiom.language_name}}</option>
+                {% endfor %}
+                </select>
+                <label class="form-label">Quote Language</label>
+            </div>
         </div>
     </div>
     <button class="btn waves-effect waves-light" type="submit">Submit

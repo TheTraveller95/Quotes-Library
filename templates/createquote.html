@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container-form">
     <h2 class="add-new-quote">Add new quote</h2>
-    <form id="quote-form" action = '{{url_for("add_quote")}}' method="POST">
+    <form id="quote-form" action = '{{url_for("create_quote")}}' method="POST">
         <div class="row">
             <div class="input-field col s12">
                 <select id="quote_category" name="quote_category">
@@ -29,7 +29,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <select id="source_name" name="source_name">
+                <select id="quote_source" name="quote_source">
                 <option value="" disabled selected>Click to choose the source</option>
                 {% for source in sources %}
                 <option value="{{source.source_name}}">{{source.source_name}}</option>
