@@ -10,7 +10,7 @@ load_dotenv()
 app = Flask(__name__)
 
 app.config['MONGO_DBNAME'] = 'quotes_library'
-app.config['MONGO_URI'] = os.getenv("MONGO_URI")
+app.config['MONGO_URI'] = "mongodb+srv://root:r00tUser@myfirstcluster-p7dea.mongodb.net/quotes_library?retryWrites=true&w=majority"
 
 mongo = PyMongo(app)
 
@@ -48,20 +48,6 @@ def get_all_languages():
         languages=list(mongo.db.languages.find())
         )
 
-
-'''@app.route('/add_category')
-def add_category():
-    return render_template('addcategory.html',
-    category=list(mongo.db.categories.find()))
-
-
-@app.route('/create_category', methods=['POST'])
-def create_category():
-    category=mongo.db.categories
-    category_list=list(mongo.db.categories.find())
-    category.insert_one(request.form.to_dict())
-    return redirect('home')'''
-    
 
 @app.route('/get_category/<category_id>')
 def get_category(category_id):
@@ -120,12 +106,6 @@ def create_quote():
         languages=list(mongo.db.languages.find())
         )
 
-#@app.route('/add_quote', methods=['POST'])
-#def add_quote():
-    #quote = mongo.db.quotes
-    #quote.insert_one(request.form.to_dict())
-    #return redirect(url_for('home'))
-
 
 @app.route('/edit/<quote_id>', methods=['GET','POST'])
 def modify(quote_id):
@@ -150,18 +130,6 @@ def modify(quote_id):
         sources=list(mongo.db.sources.find()),
         languages=list(mongo.db.languages.find()))
 
-#@app.route('/modify_quote/<quote_id>', methods=['POST'])
-#def modify_quote(quote_id):
-    #quote = mongo.db.quotes
-    #quote.update({'_id': ObjectId(quote_id)}, {
-        #'quote_category': request.form.get('quote_category'),
-        #'quote_text': request.form.get('quote_text'),
-        #'quote_author': request.form.get('quote_author'),
-        #'quote_source': request.form.get('quote_source'),
-       # 'quote_source_name': request.form.get('quote_source_name'),
-        #'quote_language': request.form.get('quote_language')
-   # })
-   # return redirect(url_for('home'))
 
 
 @app.route('/delete_quote/<quote_id>')
@@ -173,13 +141,6 @@ def delete_quote(quote_id):
     quote.delete_one({'_id': ObjectId(quote_id)})
     flash("Quote deleted")
     return redirect(url_for('home'))
-
-"""@app.route('/delete_quote/<quote_deleted_id>')
-def delete_quote(quote_deleted_id):
-    quote=mongo.db.quotes
-    quote.delete_one({'_id': ObjectId(quote_deleted_id)})
-    return redirect('/home')"""
-
 
 
 if __name__ == '__main__':
