@@ -1,64 +1,66 @@
 {% extends 'home.html' %}
 
 {% block content %}
-
-<form action = '{{url_for("modify", quote_id=quote._id)}}' method="POST">
-    <div class="row">
-        <div class="input-field col s12">
-            <select id="quote_category" name="quote_category">
-            <option value="" disabled selected>Choose the category</option>
-            {% for category in category %}
-            <option value="{{category.category_name}}">{{category.category_name}}</option>
-            {% endfor %}
-            </select>
-            <label>Choose the category</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s12">
-            <input id="quote_text" name="quote_text" type="text" class="validate" value="{{quote.quote_text}}">
-            <label for="icon_prefix">Text</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s12">
-            <input id="quote_author" name="quote_author" type="text" class="validate" value="{{quote.quote_author}}">
-            <label for="icon_prefix">Author</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s12">
-            <select id="quote_source" name="quote_source">
-            <option value="" disabled selected>Choose the source</option>
-            {% for source in sources %}
-            <option value="{{source.source_name}}">{{source.source_name}}</option>
-            {% endfor %}
-            </select>
-            <label>Source</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s12">
-            <input id="quote_source_name" name="quote_source_name" type="text" class="validate" value="{{quote.quote_source_name}}">
-            <label for="icon_prefix">Source name</label>
-        </div>
-    </div>
-    <div class="row">
+<div class="container-form">
+    <h2 class="add-new-quote">Edit quote</h2>
+    <form action = '{{url_for("modify", quote_id=quote._id)}}' method="POST" class="">
         <div class="row">
             <div class="input-field col s12">
-                <select id="language_name" name="language_name">
-                <option class="choose-idiom" value="" disabled selected>Click to choose the language</option>
-                {% for idiom in languages %}
-                <option value="{{idiom.language_name}}">{{idiom.language_name}}</option>
+                <select id="quote_category" name="quote_category">
+                <option value="" disabled selected>Choose the category</option>
+                {% for category in category %}
+                <option value="{{category.category_name}}">{{category.category_name}}</option>
                 {% endfor %}
                 </select>
-                <label class="form-label">Quote Language</label>
+                <label>Choose the category</label>
             </div>
         </div>
-    </div>
-    <button class="btn waves-effect waves-light" type="submit">Submit
-        <i class="material-icons right">send</i>
-    </button>
-</form>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="quote_text" name="quote_text" type="text" class="validate form-input" value="{{quote.quote_text}}">
+                <label for="icon_prefix">Text</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="quote_author" name="quote_author" type="text" class="validate form-input" value="{{quote.quote_author}}">
+                <label for="icon_prefix">Author</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <select id="quote_source" name="quote_source">
+                <option value="" disabled selected>Choose the source</option>
+                {% for source in sources %}
+                <option value="{{source.source_name}}">{{source.source_name}}</option>
+                {% endfor %}
+                </select>
+                <label>Source</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="quote_source_name" name="quote_source_name" type="text" class="validate form-input" value="{{quote.quote_source_name}}">
+                <label for="icon_prefix">Source name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+                <div class="input-field col s12">
+                    <select id="language_name" name="language_name">
+                    <option class="choose-idiom" value="" disabled selected>Click to choose the language</option>
+                    {% for idiom in languages %}
+                    <option value="{{idiom.language_name}}">{{idiom.language_name}}</option>
+                    {% endfor %}
+                    </select>
+                    <label class="form-label">Quote Language</label>
+                </div>
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit">Submit
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+</div>
 
 {% endblock %}
