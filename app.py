@@ -10,7 +10,8 @@ load_dotenv()
 app = Flask(__name__)
 
 app.config['MONGO_DBNAME'] = 'quotes_library'
-app.config['MONGO_URI'] = "mongodb+srv://root:r00tUser@myfirstcluster-p7dea.mongodb.net/quotes_library?retryWrites=true&w=majority"
+app.config['MONGO_URI'] = os.getenv("MONGO_URI")
+app.secret_key = os.getenv("secret_key")
 
 mongo = PyMongo(app)
 
