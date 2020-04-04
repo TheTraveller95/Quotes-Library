@@ -83,6 +83,14 @@ In order to run the code locally you need to go to https://github.com/TheTravell
 or run the command "git clone https://github.com/TheTraveller95/quotes-library.git" in your machine's terminal after having navigated to the folder 
 you want to save the code into.
 
+## User's stories
+
+- As an user, I can finally have all the quotes I need in only one place. I won't need to browse the entire web anymore
+
+- As an author, I can add quotes from my books so everyone can use them and I'll get the oportunity of increasing my books sells 
+
+- It is my favourite place where to get tue quotes from for all my social media profiles
+
 ## Credits
 
 ### Content
