@@ -3,9 +3,11 @@
 {% block content %}
 <div class="row container-cat">
     <h2 class="choosen-category">Category: {{categories.category_name}}</h2>
+    <div class="row">
     {% for quote in quotes %}
     {% if quote.quote_category == categories.category_name %}
-    <div class="col s12 box">
+    
+    <div class="col s4 box">
         <ul>
             <li>
                 <div>
@@ -31,9 +33,10 @@
         </ul>
     </div>
     
+
     {% endif %}
     {% endfor %}
     
 </div>
-
+</div>
 {% endblock %}

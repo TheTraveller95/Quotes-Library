@@ -7,11 +7,11 @@
     <p class="secondary-title">by Andrea</p>
     <section>
         <p class="description">
-            Are you tired of browsing the entire web in order to find the perfect quote for your social media posts?
-            Good job! You have found the solution to your problem!
-            In our Quotes Library you can find all the quotes you need and browse them by category, language and source.
-            But this is not the only feature we offer. You can also add new quotes or edit existing ones if you find some mistake.
-            Adding a new quote is very easy. You just need to click on the Add Quote button and fill all the fields with the details required. And that's it.
+            Are you tired of browsing the entire web in order to find the perfect quote for your social media posts? <br>
+            Good job! You have found the solution to your problem!<br>
+            In our Quotes Library you can find all the quotes you need and browse them by category, language and source.<br>
+            But this is not the only feature we offer. You can also add new quotes or edit existing ones if you find some mistake.<br>
+            Adding a new quote is very easy. You just need to click on the Add Quote button and fill all the fields with the details required. And that's it.<br>
             So what are you waiting for? Join us and help us buliding the best Quotes Library ever!! 
         </p>
     </section>
@@ -27,8 +27,8 @@
         {% endfor %}
     </div>
 
-    <div id="author-section" class="author">
-        <p class="author-title">Languages</p>
+    <div id="language-section" class="language">
+        <p class="language-title">Languages</p>
         {% for language in languages %}
             <a class="waves-effect waves-light btn-large" href="{{url_for('get_language', language_id=language._id)}}">{{language.language_name}}</a>
         {% endfor %}

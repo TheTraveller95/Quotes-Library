@@ -34,17 +34,6 @@ nav{
     margin-left: 5px;
 }
 
-/*.dropdownn{
-    width: 113.95px;
-    left: 986.925px;
-    top: 40px;
-    height: 285px;
-    transform-origin: 0 0;
-    opacity: 0.4;
-    transform: scaleX(1) scaleY(1);
-    margin-top: 25px;
-    background-color: transparent;
-}*/
 
 #dropdown1,
 #dropdown2,
@@ -58,10 +47,6 @@ nav{
 #dropdown2 {
   width: 310px !important;  
 }
-
-/*#dropdown2 {
-  width: 155px !important;  
-}*/
 
 
 #dropdown1 li,
@@ -92,22 +77,6 @@ nav{
     background-color: rgb(0, 47, 255) !important;
 }
 
-/*#dropdown2> li> a {
-    height: 66px !important;
-}*/
-
-/*.dropdown-content {
-    width: 300px !important;
-}*/
-
-
-/*.add-quote{
-    margin-bottom: 10px;
-    margin-left: 5px;
-    padding: 0 10;
-    text-align: center;
-    background-color: rgba(0, 0, 255, 0.6)
-}*/
 
 #cat-section .right{
     margin-left: 0 !important;
@@ -118,9 +87,6 @@ nav{
     background-color: rgba(255, 196, 0, 0.75) !important;
 }
 
-/*#cat-section .btn:hover{
-    background-color: rgba(0, 0, 255, 0.973) !important;
-}*/
 
 .btn{
     border-radius: 25%;
@@ -188,7 +154,7 @@ nav{
 .description{
     padding-left: 10%;
     padding-right: 10%;
-    text-align: justify;
+    text-align: center;
 }
 
 .btn-large:hover {
@@ -201,13 +167,13 @@ nav{
     float: left;
 }
 
-.cat, .author, .source, .cat-loop{
+.cat, .language, .source, .cat-loop{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
 
-.cat-title, .author-title, .source-title{
+.cat-title, .language-title, .source-title{
     font-size: 35px;
     font-weight: 600;
     font-style: italic;
@@ -232,7 +198,7 @@ nav{
 /*--------------------------------------------get category, get author, get source-----------------------------------------*/
 
 .container-cat,
-.container-author,
+.container-language,
 .container-source,
 .container-form{
     background-color: rgba(77, 65, 25, 0.6);
@@ -249,7 +215,7 @@ nav{
 }
 
 .choosen-category,
-.choosen-author,
+.choosen-language,
 .choosen-source,
 .add-new-quote {
     text-align: center;
@@ -292,18 +258,11 @@ nav{
     margin-top: 20px;
 }
 
-/*#quote-form {
-    position: relative;
-    margin-top: 10%;
-}*/
-
-
 /*-------------------------------------------------create quote-------------------------------------------*/
 
 .form-label{
     color: white !important;
     font-size: 700 !important;
-    /*padding-left: 15px;*/
 }
 
 .form-input{
@@ -317,7 +276,6 @@ nav{
     font-size: 700 !important;
     background-color: rgba(255, 255, 255, 1) !important;
     margin-top: 16px !important;
-    /*padding-left: 15px !important;*/
 }
 
 
@@ -380,21 +338,56 @@ nav{
 @media (min-width: 320px) and (max-width: 373px) {
     .container,
     .container-source,
-    .container-author,
+    .container-language,
     .container-cat {
         margin-top: 150px;
     }
-}
-
-@media (min-width: 374px) and (max-width: 1024px) {
-    .container,
-    .container-source,
-    .container-author,
-    .container-cat {
-        margin-top: 100px;
+    .box {
+        width: 75% !important;
+        height: 280px !important;
+        margin-left: 12.5% !important;
     }
 }
 
+@media (min-width: 374px) and (max-width: 411px) {
+    .container,
+    .container-source,
+    .container-language,
+    .container-cat {
+        margin-top: 100px;
+    }
+
+      .box {
+        width: 75% !important;
+        height: 280px !important;
+        margin-left: 12.5% !important;
+    }
+}
+
+@media (min-width: 412px) and (max-width: 823px) {
+    .container,
+    .container-source,
+    .container-language,
+    .container-cat {
+        margin-top: 100px;
+    }
+
+      .box {
+        height: 300px !important;
+
+    }
+}
+
+@media (min-width: 412px) and (max-width: 1024px) {
+    .container,
+    .container-source,
+    .container-language,
+    .container-cat {
+        margin-top: 100px;
+    }
+
+
+}
 
 @media (width: 1024px){ /*ipad pro*/
     

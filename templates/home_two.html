@@ -27,11 +27,14 @@
         {% endfor %}
     </div>
 
-    <div id="author-section" class="author">
-        <p class="author-title">Languages</p>
+    <div id="language-section" class="language">
+        <p class="language-title">Languages</p>
         {% for language in languages %}
             <a class="waves-effect waves-light btn-large" href="{{url_for('get_language', language_id=language._id)}}">{{language.language_name}}</a>
         {% endfor %}
+        <div id="more-languages">
+            <a class="waves-effect waves-light btn-large" href="{{url_for('get_less_languages')}}">See less...</a>
+        </div>
     </div>
 
     <div id="source-section" class="source">

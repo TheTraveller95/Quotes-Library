@@ -22,12 +22,8 @@ def home():
     """
     This function loads the home page
     """
-    #quotes=mongo.db.quotes.find()
-    #mylist = [] 
-
     return render_template('home.html', 
         category=list(mongo.db.categories.find()),
-        #quotes=list(mongo.db.quotes.find()),
         sources=list(mongo.db.sources.find()),
         languages=list(mongo.db.languages.find().limit(50))
         )
@@ -44,9 +40,19 @@ def get_all_languages():
     """
     return render_template('home_two.html', 
         category=list(mongo.db.categories.find()), # I need all of them because are called inside the home_two.html
-        quotes=list(mongo.db.quotes.find()), 
         sources=list(mongo.db.sources.find()),
         languages=list(mongo.db.languages.find())
+        )
+
+@app.route('/get_less_languages')
+def get_less_languages():
+    """
+    This function loads the full languages list on the home page
+    """
+    return render_template('home.html', 
+        category=list(mongo.db.categories.find()), # I need all of them because are called inside the home_two.html 
+        sources=list(mongo.db.sources.find()),
+        languages=list(mongo.db.languages.find().limit(50))
         )
 
 
@@ -71,9 +77,7 @@ def get_language(language_id):
     """
     return render_template('getlanguage.html',
         language=mongo.db.languages.find_one({'_id': ObjectId(language_id)}),
-        category= list(mongo.db.categories.find()),
         quotes=list(mongo.db.quotes.find()),
-        sources=list(mongo.db.sources.find()),
         languages=list(mongo.db.languages.find())
         )
 
@@ -84,7 +88,6 @@ def get_source(source_id):
     """
     return render_template('getsource.html',
         source=mongo.db.sources.find_one({'_id': ObjectId(source_id)}),
-        category= list(mongo.db.categories.find()),
         quotes=list(mongo.db.quotes.find()),
         sources=list(mongo.db.sources.find())
         )

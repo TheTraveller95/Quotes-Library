@@ -2,9 +2,9 @@
 
 {% block content %}
 
-<div class="container-author row">
+<div class="container-language row">
 
-<h2 class="choosen-author">Language: {{language.language_name}}</h2>
+<h2 class="choosen-language">Language: {{language.language_name}}</h2>
 
     {% for quote in quotes %}
     {% if quote.quote_language == language.language_name %}
