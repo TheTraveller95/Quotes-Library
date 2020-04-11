@@ -335,7 +335,7 @@ nav{
 
 /*-------------------------------------------------media query-----------------------------------------------*/
 
-@media (min-width: 320px) and (max-width: 411px) {
+@media (min-width: 320px) and (max-width: 414px) {
 
     .box {
         width: 75% !important;
@@ -366,7 +366,7 @@ nav{
     
 }
 
-@media (min-width: 374px) and (max-width: 411px) {
+@media (min-width: 374px) and (max-width: 414px) {
     .container,
     .container-source,
     .container-language,
@@ -376,7 +376,17 @@ nav{
 
 }
 
-@media (min-width: 412px) and (max-width: 823px) {
+@media (min-width: 415px) and (max-width: 568px) {
+
+    .box {
+        width: 35% !important;
+        height: 280px !important;
+        margin-left: 10% !important;
+        margin-top: 4% !important;
+    }
+}
+
+@media (min-width: 415px) and (max-width: 823px) {
     .container,
     .container-source,
     .container-language,
@@ -390,7 +400,7 @@ nav{
     }
 }
 
-@media (min-width: 412px) and (max-width: 1024px) {
+@media (min-width: 415px) and (max-width: 1024px) {
     .container,
     .container-source,
     .container-language,
