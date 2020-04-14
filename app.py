@@ -65,7 +65,7 @@ def get_category(category_id):
         category= list(mongo.db.categories.find()),
         categories=mongo.db.categories.find_one({'_id': ObjectId(category_id)}),
         quotes=list(mongo.db.quotes.find()),
-        sources=list(mongo.db.sources.find())
+        sources=list(mongo.db.sources.find()) # tried to delete this after having extended the base.html but does not work
         )
 
 
@@ -148,4 +148,4 @@ def delete_quote(quote_id):
 
 
 if __name__ == '__main__':
-    app.run(host=os.getenv('IP'), port=os.getenv('PORT'), debug=True)
+    app.run(host=os.getenv('IP'), port=os.getenv('PORT'), debug=os.getenv("DEBUG"))

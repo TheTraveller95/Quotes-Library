@@ -1,9 +1,10 @@
-{% extends 'home.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 <div class="row container-cat">
     <h2 class="choosen-category">Category: {{categories.category_name}}</h2>
     <div class="row">
+    <!---{% if quotes %} -->
     {% for quote in quotes %}
     {% if quote.quote_category == categories.category_name %}
     
@@ -32,10 +33,12 @@
             </li>
         </ul>
     </div>
-    
-
     {% endif %}
     {% endfor %}
+    <!---{% else %}
+    <div>No quotes</div>
+    {% endif %}-->
+    
     
 </div>
 </div>
