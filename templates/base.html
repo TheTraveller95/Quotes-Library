@@ -16,7 +16,7 @@
         <ul id="dropdown1" class="dropdown-content">
             <li class="row">
                 {% for category in category %}
-                    <a class="waves-effect waves-light btn-large col s6" href="{{url_for('get_category', category_id=category._id)}}">{{category.category_name}}</a>
+                    <a class="waves-effect waves-light btn-large col s6" href="{{url_for('get_quote_by_category', category_id=category._id)}}">{{category.category_name}}</a>
                 {% endfor %}
             </li>
         </ul>
@@ -24,7 +24,7 @@
         <ul id="dropdown3" class="dropdown-content">
             <li>
                 {% for source in sources %}
-                    <a class="waves-effect waves-light btn-large" href="{{url_for('get_source', source_id=source._id)}}">{{source.source_name}}</a>
+                    <a class="waves-effect waves-light btn-large" href="{{url_for('get_quote_by_source', source_id=source._id)}}">{{source.source_name}}</a>
                 {% endfor %}
             </li>
         </ul>

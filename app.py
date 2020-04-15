@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 
 def home():
     """
-    This function loads the home page
+    Loads the home page
     """
     return render_template('home.html', 
         category=list(mongo.db.categories.find()),
@@ -30,16 +30,19 @@ def home():
 
 @app.route('/go_home')
 def go_home():
+    """
+    Redirect to the home page on mobile version
+    """
     return redirect('home')
 
     
 @app.route('/get_all_languages')
 def get_all_languages():
     """
-    This function loads the full languages list on the home page
+    Loads the full languages list on the home page
     """
     return render_template('home_two.html', 
-        category=list(mongo.db.categories.find()), # I need all of them because are called inside the home_two.html
+        category=list(mongo.db.categories.find()), 
         sources=list(mongo.db.sources.find()),
         languages=list(mongo.db.languages.find())
         )
@@ -47,19 +50,19 @@ def get_all_languages():
 @app.route('/get_less_languages')
 def get_less_languages():
     """
-    This function loads the full languages list on the home page
+    Loads the half languages list on the home page
     """
     return render_template('home.html', 
-        category=list(mongo.db.categories.find()), # I need all of them because are called inside the home_two.html 
+        category=list(mongo.db.categories.find()),
         sources=list(mongo.db.sources.find()),
         languages=list(mongo.db.languages.find().limit(50))
         )
 
 
-@app.route('/get_category/<category_id>')
-def get_category(category_id):
+@app.route('/quote/category/<category_id>')
+def get_quote_by_category(category_id):
     """
-    This function will load the getcategory.html that displays the quotes list depending on the chosen category
+    Displays the quotes list depending on the chosen category
     """
     return render_template('getcategory.html', 
         category= list(mongo.db.categories.find()),
@@ -70,10 +73,10 @@ def get_category(category_id):
 
 
 
-@app.route('/get_language/<language_id>') 
-def get_language(language_id):
+@app.route('/quote/language/<language_id>') 
+def get_quote_by_language(language_id):
     """
-    This function will load the getlanguage.html that displays the quotes list depending on the chosen language
+    Displays the quotes list depending on the chosen language
     """
     return render_template('getlanguage.html',
         language=mongo.db.languages.find_one({'_id': ObjectId(language_id)}),
@@ -81,10 +84,10 @@ def get_language(language_id):
         languages=list(mongo.db.languages.find())
         )
 
-@app.route('/get_source/<source_id>')
-def get_source(source_id):
+@app.route('/quote/source/<source_id>')
+def get_quote_by_source(source_id):
     """
-    This function will load the getsource.html that displays the quotes list depending on the chosen source
+    Displays the quotes list depending on the chosen source
     """
     return render_template('getsource.html',
         source=mongo.db.sources.find_one({'_id': ObjectId(source_id)}),
@@ -96,7 +99,7 @@ def get_source(source_id):
 @app.route('/quote/add', methods=['GET','POST'])
 def create_quote():
     """
-    This function will allow the user to add a new quote
+    Allow the user to add a new quote
     """
     if request.method == 'POST':
         quote = mongo.db.quotes
@@ -111,10 +114,10 @@ def create_quote():
         )
 
 
-@app.route('/edit/<quote_id>', methods=['GET','POST'])
+@app.route('/quote/edit/<quote_id>', methods=['GET','POST'])
 def modify(quote_id):
     """
-    This function will allow the user to edit an existing quote
+    Allow the user to edit an existing quote
     """
     if request.method == 'POST':
         quote = mongo.db.quotes
@@ -126,7 +129,7 @@ def modify(quote_id):
             'quote_source_name': request.form.get('quote_source_name'),
             'quote_language': request.form.get('quote_language')
         })
-        return redirect(url_for('home'))  # cannot redirect to a differen
+        return redirect(url_for('home'))  # cannot redirect to a different
 
     return render_template('modifyquote.html',
         quote=mongo.db.quotes.find_one({'_id': ObjectId(quote_id)}),
@@ -136,10 +139,10 @@ def modify(quote_id):
 
 
 
-@app.route('/delete_quote/<quote_id>')
+@app.route('/quote/delete_quote/<quote_id>')
 def delete_quote(quote_id):
     """
-    This function will allow the user to edit an existing quote
+    Allow the user to delete an existing quote
     """
     quote=mongo.db.quotes
     quote.delete_one({'_id': ObjectId(quote_id)})
