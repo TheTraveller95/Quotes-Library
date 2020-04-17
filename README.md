@@ -73,6 +73,7 @@ Honor 9) and after the good feedback, it has been sent to multiple contacts in o
 given some specific tasks in order to test each one of the critical features of the project.
 The main complain was that after having edited a quote, the website brought the user to the home page instead of to the previous quotes page
 The issues have been solved succesfully. 
+As well, some unit tests have been implemented to assure the correct application functionality.
 
 ## Deployment
 
