@@ -3,7 +3,7 @@ from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from operator import itemgetter
-from dotenv import load_dotenv #added the .env and .gitignore
+from dotenv import load_dotenv 
 
 load_dotenv()
 
@@ -66,7 +66,7 @@ def get_quote_by_category(category_id):
         category= list(mongo.db.categories.find()),
         categories=mongo.db.categories.find_one({'_id': ObjectId(category_id)}),
         quotes=list(mongo.db.quotes.find()),
-        sources=list(mongo.db.sources.find()) # tried to delete this after having extended the base.html but does not work
+        sources=list(mongo.db.sources.find()) 
         )
 
 
@@ -127,7 +127,7 @@ def modify(quote_id):
             'quote_source_name': request.form.get('quote_source_name'),
             'quote_language': request.form.get('quote_language')
         })
-        return redirect(url_for('home'))  # cannot redirect to a different
+        return redirect(url_for('home'))  
 
     return render_template('modifyquote.html',
         quote=mongo.db.quotes.find_one({'_id': ObjectId(quote_id)}),
