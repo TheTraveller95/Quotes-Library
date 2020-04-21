@@ -75,6 +75,12 @@ The main complain was that after having edited a quote, the website brought the 
 The issues have been solved succesfully. 
 As well, some unit tests have been implemented to assure the correct application functionality.
 
+About the code validation, the following validation services have been used:
+
+- https://jigsaw.w3.org/css-validator/#validate-by-input
+- https://validator.w3.org/#validate-by-input
+- https://extendsclass.com/python-tester.html
+
 ## Deployment
 
 The project deployment has been done using Heroku. The pubblic accessible web link of my project has been deployed by going to 

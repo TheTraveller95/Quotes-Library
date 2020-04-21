@@ -34,7 +34,6 @@ nav{
     margin-left: 5px;
 }
 
-
 #dropdown1,
 #dropdown2,
 #dropdown3 {
@@ -47,7 +46,6 @@ nav{
 #dropdown2 {
   width: 310px !important;  
 }
-
 
 #dropdown1 li,
 #dropdown2 li,
@@ -77,7 +75,6 @@ nav{
     background-color: rgb(0, 47, 255) !important;
 }
 
-
 #cat-section .right{
     margin-left: 0 !important;
 }
@@ -87,13 +84,12 @@ nav{
     background-color: rgba(255, 196, 0, 0.75) !important;
 }
 
-
 .btn{
     border-radius: 25%;
     background-color: rgb(0, 47, 255);
     margin-bottom: 10px;
     margin-left: 5px;
-    padding: 0 10;
+    padding: 0 10px;
     text-align: center;
 }
 
@@ -262,18 +258,18 @@ nav{
 
 .form-label{
     color: white !important;
-    font-size: 700 !important;
+    font-weight: 700 !important;
 }
 
 .form-input{
     color: rgb(0, 47, 255); 
-    font-size: 700;
+    font-weight: 700 !important; 
     background-color: rgba(255, 255, 255, 0.774) !important;
 }
 
 .select-dropdown{
     color: rgb(0, 47, 255) !important;
-    font-size: 700 !important;
+    font-weight: 700 !important;
     background-color: rgba(255, 255, 255, 1) !important;
     margin-top: 16px !important;
 }

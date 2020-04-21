@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
 <div class="home-description">
     <p class="main-title">Quotes Library</p>
     <p class="secondary-title">by Andrea</p>
@@ -15,9 +14,6 @@
             So what are you waiting for? Join us and help us buliding the best Quotes Library ever!! 
         </p>
     </section>
-
-
-
     <div id="cat-section" class="cat">
         <p class="cat-title">Categories</p>
     </div>
@@ -26,7 +22,6 @@
         <a class="waves-effect waves-light btn-large" href="{{url_for('get_quote_by_category', category_id=category._id)}}">{{category.category_name}}</a>
         {% endfor %}
     </div>
-
     <div id="language-section" class="language">
         <p class="language-title">Languages</p>
         {% for language in languages %}
@@ -36,7 +31,6 @@
             <a class="waves-effect waves-light btn-large" href="{{url_for('get_all_languages')}}">See more languages...</a>
         </div>
     </div>
-
     <div id="source-section" class="source">
         <p class="source-title">Type of source</p>
         {% for source in sources %}
@@ -44,6 +38,5 @@
         {% endfor %}
     </div>
 </div>
-
 {% endblock %}
 
