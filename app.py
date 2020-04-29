@@ -31,7 +31,7 @@ def go_home():
     """
     Redirect to the home page on mobile version
     """
-    return redirect('home.html')
+    return redirect(url_for('home'))
 
     
 @app.route('/get_all_languages')
