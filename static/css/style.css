@@ -331,17 +331,6 @@ nav{
 
 /*-------------------------------------------------media query-----------------------------------------------*/
 
-@media (min-width:414px){
-    body {
-    background-attachment: scroll !important;
-    background-image: url(https://live.staticflickr.com/65535/49510823658_6a8f9a5d34_c.jpg);
-    background-size: cover !important;
-    width: 100% !important;
-    height: 100% !important;
-    background-position: center;
-    }
-}
-
 @media (min-width: 320px) and (max-width: 414px) {
 
     .box {
