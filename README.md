@@ -51,6 +51,8 @@ It can be accessed from the navbar present on any page
 The modifyquote.html is very similar to the createquote.html but here the user can edit an existing quote. 
 It can be accessed by clicking on the edit button present on every quote
 
+Note: in order to fill the fields without a menu, you should click on the bottom side of the field. Otherwise it does not take the click.
+
 ## Existing Features
 
 The most important part of this project is the possibility for the user to add, edit and delete items stored in the DB.
