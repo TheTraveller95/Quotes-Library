@@ -47,8 +47,8 @@
         <div class="row">
             <div class="row">
                 <div class="input-field col s12">
-                    <select id="language_name" name="language_name">
-                    <option class="choose-idiom" value="{{quote.quote_language}}" selected>{{quote.quote_language}}</option>
+                    <select id="quote_language" name="quote_language">
+                    <option value="{{quote.quote_language}}" selected>{{quote.quote_language}}</option>
                     {% for idiom in languages %}
                     <option value="{{idiom.language_name}}">{{idiom.language_name}}</option>
                     {% endfor %}
