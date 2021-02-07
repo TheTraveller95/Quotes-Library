@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row container-cat">
+    <h2 class="choosen-category">Category: {{categories.category_name}}</h2>
+    <div class="row">
+        {% for quote in quotes %}
+        {% if quote.quote_category == categories.category_name %}
+        <div class="col s4 box">
+            <ul>
+                <li>
+                    <div>
+                        {{quote.quote_text}}
+                    </div>
+                    <div>
+                        <span>{{quote.quote_author}} - </span>
+                        <span>{{quote.quote_source_name}}</span>
+                    </div>
+                </li>
+                <li class="edit-delete-buttons">
+                    <span>
+                        <a href="{{url_for('modify', quote_id = quote._id)}}" class="waves-effect waves-light btn-small modify">
+                        <i class="material-icons large">edit</i>
+                        </a>
+                    </span>
+                    <span>
+                        <a id="delete_quote" class="waves-effect waves-light btn-small delete modal-trigger" href="{{url_for('delete_quote', quote_id = quote._id)}}">
+                        <i class="material-icons large">delete_forever</i>
+                        </a>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        {% endif %}
+        {% endfor %}    
+    </div>
+</div>
+{% endblock %}
